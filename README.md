@@ -7,7 +7,7 @@
 https://github.com/snakers4/silero-mo...
 ```
 
-2. Vosk-api
+2. Vosk-api (change the path to vosk in stt)
 ```
 https://github.com/alphacep/vosk-api
 ```
