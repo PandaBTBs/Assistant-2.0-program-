@@ -33,10 +33,7 @@ speaker = 'baya'
 time.sleep(1)
 out_yellow('. \n\
                 continue without selecting a model & - input: on/off  / \n\n\
-                #-NOactive-# would you like to customize the vosk model and voice & - input: model \n\n\
-                if you want to activate the skill - entertaining stories, \n\
-                then enter(after downloading): hs1, hs2, hs3 \n\
-                --do you want to skip? enter any value')
+                would you like to customize the vosk model and voice & - input: model \n\n\')
     
 p  = str(input())
 if p == 'on': 
