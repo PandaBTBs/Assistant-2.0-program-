@@ -1,13 +1,47 @@
-# python -m sounddevice
 import vosk
 import sys
 import sounddevice as sd
 import queue
 import json
 import time
+import psutil
 
 
-model = vosk.Model("J:\\Stella\\stellaPR\\vosk_model_small_ru_0.4")
+def out_red(text):
+    print("\033[31m {}" .format(text))\
+        
+def out_white(text):
+    print("\033[39m {}" .format(text))
+
+def model_vosk(voskSTT):
+    if voskSTT == 'big':
+        return 1
+    elif voskSTT == 'small':
+        return 2
+
+
+print('input vosk model: small or big')
+voskSTT = str(input())
+if model_vosk(voskSTT) == 1:
+    print('model_vosk finish installed: big')
+    model = vosk.Model("J:\\Stella\\stellaPR\\vosk_model_big_ru_0.10")
+
+elif model_vosk(voskSTT) == 2:
+    print('model_vosk finish installed: small')
+    model = vosk.Model("J:\\Stella\\stellaPR\\vosk_model_small_ru_0.4")
+        
+else:
+    out_red('error, EXIT')
+    out_white('text-auto')
+    for proc in psutil.process_iter():
+        if proc.name() == 'python.exe':
+            proc.terminate()
+
+
+
+# model = vosk.Model("J:\\Stella\\stellaPR\\vosk_model_small_ru_0.4")
+
+
 samplerate = 16000
 device = 1
 
