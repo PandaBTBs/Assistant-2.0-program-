@@ -27,107 +27,75 @@ def model_change(speech):
     elif speech == 'xenia':
         return 3
     
-def model_vosk(voskSTT):
-    if voskSTT == 'big':
-        return 1
-    elif voskSTT == 'small':
-        return 2
 
+speaker = 'baya'
 
-out_red('pls input start....')
-
-n = str(input())
-
-out_red('loading...')
-
-
-if n ==  'start':
-    time.sleep(1)
-    out_yellow('. \n\
+time.sleep(1)
+out_yellow('. \n\
                 continue without selecting a model & - input: on/off  / \n\n\
                 #-NOactive-# would you like to customize the vosk model and voice & - input: model \n\n\
                 if you want to activate the skill - entertaining stories, \n\
                 then enter(after downloading): hs1, hs2, hs3 \n\
                 --do you want to skip? enter any value')
     
-    p  = str(input())
-    if p == 'on': 
-            print('--------start jmonge--------')
-            pass
-    elif p == 'off':
-        out_yellow('--------off pr*******--------')
-        out_white('text-auto')
-        for proc in psutil.process_iter():
-            if proc.name() == 'python.exe':
-                proc.terminate()
+p  = str(input())
+if p == 'on': 
+        print('--------start jmonge--------')
+        pass
+elif p == 'off':
+    out_yellow('--------off pr*******--------')
+    out_white('text-auto')
+    for proc in psutil.process_iter():
+        if proc.name() == 'python.exe':
+            proc.terminate()
                 
         
-    elif p == 'model':
-        print('input vosk model: small or big')
-        voskSTT = str(input())
-        if model_vosk(voskSTT) == 1:
-            print('model_vosk finish installed: big')
-            pass
-        elif model_vosk(voskSTT) == 2:
-            print('model_vosk finish installed: small')
-            pass
-        
-        else:
-            out_red('error, EXIT')
-            out_white('text-auto')
-            for proc in psutil.process_iter():
-                if proc.name() == 'python.exe':
-                    proc.terminate()
+elif p == 'model':
             
-        print('input speech: aidar, baya, kseniya, xenia')
+    print('input speech: aidar, baya, kseniya, xenia')
         
-        speech = str(input())
+    speech = str(input())
         
             
-        if model_change(speech) == 1:
+    if model_change(speech) == 1:
             out_red('speech finish installed: aidar')
             out_red('-------------------------start-------------------------')
             out_white('text-auto')
             speaker = 'aidar' 
     
-        elif model_change(speech) == 2:
+    elif model_change(speech) == 2:
             out_red('speech finish installed: baya')
             out_red('-------------------------start-------------------------')
             out_white('text-auto')
             speaker = 'baya'
     
-        elif model_change(speech) == 3:
+    elif model_change(speech) == 3:
             out_red('model_vosk and speech finish installed: kseniya')
             out_red('-------------------------start-------------------------')
             out_white('text-auto')
             speaker = 'kseniya'
     
-        elif model_change(speech) == 4:
+    elif model_change(speech) == 4:
             out_red('model_vosk and speech finish installed: xenia')
             out_red('-------------------------start-------------------------')
             out_white('text-auto')
             speaker = 'xenia'
             
         
-        else:
-            out_red('error, EXIT')
-            out_white('text-auto')
-            for proc in psutil.process_iter():
-                if proc.name() == 'python.exe':
-                    proc.terminate()
-        
     else:
-        out_yellow('--------no list cmds, close pr................--------')
+        out_red('error, EXIT')
         out_white('text-auto')
         for proc in psutil.process_iter():
             if proc.name() == 'python.exe':
                 proc.terminate()
+        
 else:
-    out_blue('--------------------error--------------------')
+    out_yellow('--------no list cmds, close pr................--------')
     out_white('text-auto')
     for proc in psutil.process_iter():
-            if proc.name() == 'python.exe':
-                proc.terminate()
+        if proc.name() == 'python.exe':
+            proc.terminate()
+
 
 
 language = 'ru'
@@ -136,7 +104,7 @@ sample_rate = 48000 # 48000
 
 put_accent = True
 put_yo = True
-device = torch.device('cpu') # cpu или gpu
+device = torch.device('cpu') 
 
 
 
