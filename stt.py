@@ -21,7 +21,7 @@ def model_vosk(voskSTT):
 
 model = vosk.Model("J:\\Stella\\stellaPR\\vosk_model_small_ru_0.4")
 
-print('input vosk model: small or big (or pass)')
+print('input vosk model: small or big (or pass - small model)')
 voskSTT = str(input())
 if model_vosk(voskSTT) == 1:
     print('model_vosk finish installed: big')
