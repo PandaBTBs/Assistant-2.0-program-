@@ -19,7 +19,6 @@ def model_vosk(voskSTT):
     elif voskSTT == 'small':
         return 2
 
-model = vosk.Model("J:\\Stella\\stellaPR\\vosk_model_small_ru_0.4")
 
 print('input vosk model: small or big (or pass - small model)')
 voskSTT = str(input())
@@ -32,7 +31,7 @@ elif model_vosk(voskSTT) == 2:
     model = vosk.Model("J:\\Stella\\stellaPR\\vosk_model_small_ru_0.4")
 
 else:
-    pass
+    model = vosk.Model("J:\\Stella\\stellaPR\\vosk_model_small_ru_0.4")
 
 
 # else:
