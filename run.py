@@ -1,7 +1,3 @@
-# ЗАКРТЫИЕ ПРИЛОЖЕНИЙ
-# СМЕНА МОДУЛЕЙ
-
-
 import os
 import stt
 import tts
@@ -13,7 +9,7 @@ import random
 
 
 
-VE_NAME = ('Ассистент')
+VE_NAME = ('Нейро')
 
 VA_ALIAS = ('ассистент', 'робот', 'стелла', 'стела', 'стала', 'стоило')
 
@@ -44,6 +40,8 @@ VA_CMD_LIST = {
         
         "joke": ('расскажи анекдот', 'шутка', 'расскажи шутку', 'пошути'),
         
+        "history": ('навык'),
+        
         "exit": ( 'заврешение работы', 'конец работы', 'закрыть')
         
     }
@@ -51,7 +49,12 @@ VA_CMD_LIST = {
 print(f"{VE_NAME}", f"{VA_ALIAS}", tts.va_speak("Ассистент, начал свою работу"))
 
 
-print('--Список команд:-- \n- list: список команд, команды, что ты умеешь\n- time: время, текущее время, сейчас времени, который чаc\n- open_browser: гугл хром, браузер\n- open_steam: стим, запусти стим \n- open_browser_server: сервер, запусти сервер \n- open_sharex: снимок, снимок экрана \n- open_OBS: запись, запись экрана \n- open_vs: код, программирование \n- open_vtube: аватар, виртуальная студия \n- open_discord: общение, друзья \n- joke: расскажи анекдот, рассмеши, шутка, расскажи шутку, пошути, развесели\n- exit: заврешение работы, конец работы, закрыть\n\n')
+print('--Список команд:-- \n- list: список команд, команды, что ты умеешь\n- time: время, текущее время, сейчас времени, который чаc\n - history: навык,\n- open_browser: гугл хром, браузер\n- open_steam: стим, запусти стим \n- open_browser_server: сервер, запусти сервер \n- open_sharex: снимок, снимок экрана \n- open_OBS: запись, запись экрана \n- open_vs: код, программирование \n- open_vtube: аватар, виртуальная студия \n- open_discord: общение, друзья \n- joke: расскажи анекдот, рассмеши, шутка, расскажи шутку, пошути, развесели\n- exit: заврешение работы, конец работы, закрыть\n\n')
+
+
+
+
+
 
 def va_respond(voice: str):
     print(voice)
@@ -180,49 +183,52 @@ def execute_cmd(cmd: str):
         tts.va_speak(text)
         quit()
     
-print('----Для активации навыка -занимательные истории- введите следующие команды: hs1, hs2, hs3(no active)----\nесли хотите пропустить введите любое значение --!ВНИМАНИЕ, далее вы не сможиите вернуться к историям--')
-
-p =  str(input())  
-
-   
-if p == 'hs1':
-        print('---------------------history-1---------------------')
-        text = 'Хорошо, давайте, придумаем, занимательную историю'
-        text+= 'Объяснительная, об, опоздании'
-        tts.va_speak(text)
+    
+    
+    
+    elif cmd == 'history':
+        tts.va_speak('Хорошо, активирован, навык, истории')
+        tts.va_speak('Какую историю, Вы, хотите выбрать? ')
+        print('pls input History: hs1, hs2, hs3')
+        history = str(input())
+        if history == 'hs1':
+            print('---------------------history-1---------------------')
+            text = 'Хорошо, давайте, придумаем, занимательную историю'
+            text+= 'Объяснительная, об, опоздании'
+            tts.va_speak(text)
         
         
-        tts.va_speak('Для начала, скажи, куда мы опоздали')
-        locally_1 = str(input())
+            tts.va_speak('Для начала, скажи, куда мы опоздали')
+            locally_1 = str(input())
         
-        tts.va_speak('теперь, назови животное, муж+ского рода')
-        genus_m = str(input())
+            tts.va_speak('теперь, назови животное, муж+ского рода')
+            genus_m = str(input())
         
-        tts.va_speak('теперь, назови, животное, женского рода')
-        genus_w = str(input())
+            tts.va_speak('теперь, назови, животное, женского рода')
+            genus_w = str(input())
         
-        tts.va_speak('где?')
-        locally_2 = str(input())
+            tts.va_speak('где?')
+            locally_2 = str(input())
         
-        tts.va_speak('животное, во множественном, числе')
-        animals = str(input())
+            tts.va_speak('животное, во множественном, числе')
+            animals = str(input())
         
-        tts.va_speak('куда?')
-        locally_3 = str(input())
+            tts.va_speak('куда?')
+            locally_3 = str(input())
         
-        tts.va_speak('и, на последок, скажи, имя, твоего знакомого')
-        input_us = str(input())
+            tts.va_speak('и, на последок, скажи, имя, твоего знакомого')
+            input_us = str(input())
         
-        tts.va_speak(f'И так, объяснительная, сегодня когда я шёл {locally_1}, \
+            tts.va_speak(f'И так, объяснительная, сегодня когда я шёл {locally_1}, \
             на меня внезапно свалился мокрый {genus_m}, я закричал как {genus_w},\
             и потерял сознание, очнулся я в {locally_2}, и сказал, отвезите меня {locally_1},\
             мне очень надо, но эти мои {animals}, почему то, отвезли меня {locally_3},\
             и от туда, я шёл пешком, пока меня не подвёз пьяный {input_us}. Вот, почему я опоздал\
             на {locally_1}. Мне кажется, получилось прикольно. Хотите, соченить еще?')
-        
-        print('pls input number_history/yes/no') 
-        
-        int1 = str(input())
+            
+            print('pls input number_history/yes/no') 
+            
+            int1 = str(input())
         if int1 == 'yes':
             print('---------------------history-2---------------------')
             text = 'Отлично,'
@@ -262,7 +268,7 @@ if p == 'hs1':
         
             print('pls input number_history/yes/no')
             
-        if int1 == 'hs1':
+        if int1 == 'hs2':
             print('---------------------history-2---------------------')
             text = 'Отлично,'
             text+= 'Текст, про, ци+рк'
@@ -326,368 +332,5 @@ if p == 'hs1':
                 pass
             else:
                 pass
-            
-        int3 = str(input()) 
-        
-        if int3 == 'yes':
-            print('---------------------history-1---------------------')
-            text = 'Хорошо, давайте, придумаем, занимательную историю'
-            text+= 'Объяснительная, об, опоздании'
-            tts.va_speak(text)
-        
-        
-            tts.va_speak('Для начала, скажи, куда, мы опоздали')
-            locally_1 = str(input())
-        
-            tts.va_speak('теперь, назови, животное, муж+ского рода')
-            genus_m = str(input())
-        
-            tts.va_speak('теперь, назови, животное, женского рода')
-            genus_w = str(input())
-        
-            tts.va_speak('где?')
-            locally_2 = str(input())
-        
-            tts.va_speak('животное, во множественном, числе')
-            animals = str(input())
-        
-            tts.va_speak('куда?')
-            locally_3 = str(input())
-        
-            tts.va_speak('и, на последок, скажи, имя твоего знакомого')
-            input_us = str(input())
-        
-            tts.va_speak(f'И так, объяснительная, сегодня когда я шёл {locally_1}, \
-            на меня внезапно свалился мокрый {genus_m}, я закричал как {genus_w},\
-            и потерял сознание, очнулся я в {locally_2}, и сказал, отвезите меня {locally_1},\
-            мне очень надо, но эти мои {animals}, почему то, отвезли меня {locally_3},\
-            и от туда, я шёл пешком, пока меня не подвёз пьяный {input_us}. Вот, почему я опоздал\
-            на {locally_1}. Мне кажется, получилось прикольно. Хотите, соченить еще?')
-        
-            print('pls input number_history/yes/no') 
-            
-        if int3 == 'hs1':
-            print('---------------------history-1---------------------')
-            text = 'Хорошо, давайте, придумаем, занимательную историю'
-            text+= 'Объяснительная, об, опоздании'
-            tts.va_speak(text)
-        
-        
-            tts.va_speak('Для начала, скажи, куда, мы опоздали')
-            locally_1 = str(input())
-        
-            tts.va_speak('теперь, назови, животное, муж+ского рода')
-            genus_m = str(input())
-        
-            tts.va_speak('теперь, назови, животное, женского рода')
-            genus_w = str(input())
-        
-            tts.va_speak('где?')
-            locally_2 = str(input())
-        
-            tts.va_speak('животное, во, множественном числе')
-            animals = str(input())
-        
-            tts.va_speak('куда?')
-            locally_3 = str(input())
-        
-            tts.va_speak('и, на последок, скажи, имя, твоего, знакомого')
-            input_us = str(input())
-        
-            tts.va_speak(f'И так, объяснительная, сегодня когда я шёл {locally_1}, \
-            на меня внезапно свалился мокрый {genus_m}, я закричал как {genus_w},\
-            и потерял сознание, очнулся я в {locally_2}, и сказал, отвезите меня {locally_1},\
-            мне очень надо, но эти мои {animals}, почему то, отвезли меня {locally_3},\
-            и от туда, я шёл пешком, пока меня не подвёз пьяный {input_us}. Вот, почему я опоздал\
-            на {locally_1}. Мне кажется, получилось прикольно. Хотите, соченить еще?')
-        
-            print('pls input number_history/yes/no')
-            
-        else:
-            text='введи, занчение -0- или любое другое'
-            tts.va_speak(text)
-            print(text) 
-            pass2=str(input())
-            if pass2 == '0':
-                pass
-            else:
-                pass
-        
-        
-elif p == 'hs2':
-        print('---------------------history-2---------------------')
-        text = 'Хорошо, давайте, придумаем, занимательную историю'
-        text+= 'Текст, про, ци+рк'
-        tts.va_speak(text)
 
-            
-        tts.va_speak('Для начала,  назови, знаменитого мужчину')    
-        puple_1 = str(input())
-            
-        tts.va_speak('какой?')    
-        quality_1 = str(input())
-            
-        tts.va_speak('Назови, еще, одного, знаменитого мужчину')    
-        puple_2 = str(input())
-            
-        tts.va_speak('Какой? в несколько слов')    
-        quality_2 = str(input())
-            
-        tts.va_speak('Теперь, назови, предмет, муж+cкого рода')    
-        item_1 = str(input())
-            
-        tts.va_speak('Какой?')    
-        quality_item = str(input())
-            
-        tts.va_speak('Назови, ещё, один предмет, муж+cкого рода')    
-        item_2= str(input())
-            
-        tts.va_speak('И ,последний, вопрос. Какой?')    
-        quality_3 = str(input())
-            
-            
-        tts.va_speak(f'Внимание!!, вот что получилось,: вчера, я ходила в цирк, сначала на арену, \
-        выскочил {quality_1}, {puple_1}, за ним выполз {quality_2}, {puple_2}, и они бросались тухлой рыбой целый час,\
-        за тем вышел, клоун у которого в руках был {item_2}, клоун бросил этот{item_2} в зрителей,\
-        и попал прямо в меня. Я обидилась, Достала из своего кармана {quality_3}, {item_1}, \
-        кинула в клоуна, и попала, прямо в лоб. Мне понравился этот цирк. По моему, получилась прикольная история. Соченим еще?')
-            
-        print('pls input number_history/yes/no')    
-        
-        
-        int2 = str(input())
-        
-        if int2 == 'yes':
-            print('---------------------history-1---------------------')
-            text = 'Хорошо, давайте, придумаем, занимательную историю'
-            text+= 'Объяснительная, об, опоздании'
-            tts.va_speak(text)
-        
-        
-            tts.va_speak('Для начала, скажи, куда, мы опоздали')
-            locally_1 = str(input())
-        
-            tts.va_speak('тепер, назови, животное, муж+ского рода')
-            genus_m = str(input())
-        
-            tts.va_speak('теперь, назови, животное, женского рода')
-            genus_w = str(input())
-        
-            tts.va_speak('где?')
-            locally_2 = str(input())
-        
-            tts.va_speak('животное, во, множественном числе')
-            animals = str(input())
-        
-            tts.va_speak('куда?')
-            locally_3 = str(input())
-        
-            tts.va_speak('и, на последок, скажи, имя, твоего, знакомого')
-            input_us = str(input())
-        
-            tts.va_speak(f'И так, объяснительная, сегодня когда я шёл {locally_1}, \
-            на меня внезапно свалился мокрый {genus_m}, я закричал как {genus_w},\
-            и потерял сознание, очнулся я в {locally_2}, и сказал, отвезите меня {locally_1},\
-            мне очень надо, но эти мои {animals}, почему то, отвезли меня {locally_3},\
-            и от туда, я шёл пешком, пока меня не подвёз пьяный {input_us}. Вот, почему я опоздал\
-            на {locally_1}. Мне кажется, получилось прикольно. Хотите, соченить еще?')
-            
-        print('pls input number_history/yes/no')
-        
-        int3 = str(input())
-        
-        if int2 == 'hs1':
-            print('---------------------history-1---------------------')
-            text = 'Хорошо, давайте, придумаем, занимательную историю'
-            text+= 'Объяснительная, об, опоздании'
-            tts.va_speak(text)
-        
-        
-            tts.va_speak('Для начал, скажи, куда, мы опоздали')
-            locally_1 = str(input())
-        
-            tts.va_speak('теперь, назови, животное, муж+ского рода')
-            genus_m = str(input())
-        
-            tts.va_speak('теперь, назови, животное, женского рода')
-            genus_w = str(input())
-        
-            tts.va_speak('где?')
-            locally_2 = str(input())
-        
-            tts.va_speak('животное, во, множественном числе')
-            animals = str(input())
-        
-            tts.va_speak('куда?')
-            locally_3 = str(input())
-        
-            tts.va_speak('и, на последок, скажи, имя, твоего знакомого')
-            input_us = str(input())
-        
-            tts.va_speak(f'И так, объяснительная, сегодня когда я шёл {locally_1}, \
-            на меня внезапно свалился мокрый {genus_m}, я закричал как {genus_w},\
-            и потерял сознание, очнулся я в {locally_2}, и сказал, отвезите меня {locally_1},\
-            мне очень надо, но эти мои {animals}, почему то, отвезли меня {locally_3},\
-            и от туда, я шёл пешком, пока меня не подвёз пьяный {input_us}. Вот, почему я опоздал\
-            на {locally_1}. Мне кажется, получилось прикольно. Хотите, соченить еще?')
-            
-        print('pls input number_history/yes/no')
-        
-        int3 = str(input())
-        
-        if int3 == 'yes':
-            print('---------------------history-3---------------------')
-            text = 'Извини,'
-            text+= ',На этом всё,'
-            text+='введи, занчение ноль,-0-, или любое, другое'
-            tts.va_speak(text)
-            print(text)
-            pass2=str(input())
-            if pass2 == '0':
-                pass
-            else:
-                pass
-        
-        if int3 == 'hs3':
-            print('---------------------history-3---------------------')
-            text = 'Извини,'
-            text+= ',На этом всё,'
-            text+='введи, занчение ноль,-0-, или любое, другое'
-            tts.va_speak(text)
-            print(text)
-            pass2=str(input())
-            if pass2 == '0':
-                pass
-            else:
-                pass
-        
-        int4 = str(input())
-        
-        if int4 == 'yes':
-            print('---------------------history-2---------------------')
-            text = 'Хорошо, давайте, придумаем, занимательную историю'
-            text+= 'Текст, про, ци+рк'
-            tts.va_speak(text)
-
-            
-            tts.va_speak('Для начала, назови, знаменитого мужчину')    
-            puple_1 = str(input())
-            
-            tts.va_speak('какой?')    
-            quality_1 = str(input())
-            
-            tts.va_speak('Назови, еще одного, знаменитого мужчину')    
-            puple_2 = str(input())
-            
-            tts.va_speak('Какой? в несколько слов')    
-            quality_2 = str(input())
-            
-            tts.va_speak('Теперь, назови, предмет, мужчкого рода')    
-            item_1 = str(input())
-            
-            tts.va_speak('Какой?')    
-            quality_item = str(input())
-            
-            tts.va_speak('Назови, ещё один, предмет, муж+cкого рода')    
-            item_2= str(input())
-            
-            tts.va_speak('И, последний вопрос. Какой?')    
-            quality_3 = str(input())
-            
-            
-            tts.va_speak(f'Внимание!!, вот что получилось,: вчера, я ходила в цирк, сначала на арену, \
-            выскочил {quality_1}, {puple_1}, за ним выполз {quality_2}, {puple_2}, и они бросались тухлой рыбой целый час,\
-            за тем вышел, клоун у которого в руках был {item_2}, клоун бросил этот{item_2} в зрителей,\
-            и попал прямо в меня. Я обидилась, Достала из своего кармана {quality_3}, {item_1}, \
-            кинула в клоуна, и попала, прямо в лоб. Мне понравился этот цирк. По моему, получилась прикольная история. Соченим еще?')
-            
-            print('pls input number_history/yes/no')
-            
-        
-            if int4 == 'hs2':
-                print('---------------------history-2---------------------')
-                text = 'Хорошо, давайте, придумаем, занимательную историю'
-                text+= 'Текст, про, ци+рк'
-                tts.va_speak(text)
-
-            
-                tts.va_speak('Для начала, назови, знаменитого мужчину')    
-                puple_1 = str(input())
-            
-                tts.va_speak('какой?')    
-                quality_1 = str(input())
-            
-                tts.va_speak('Назови, еще, одного, знаменитого мужчину')    
-                puple_2 = str(input())
-            
-                tts.va_speak('Какой? в несколько слов')    
-                quality_2 = str(input())
-            
-                tts.va_speak('Теперь, назови, предмет, муж+cкого рода')    
-                item_1 = str(input())
-            
-                tts.va_speak('Какой?')    
-                quality_item = str(input())
-            
-                tts.va_speak('Назови, ещё, один, предмет, муж+cкого рода')    
-                item_2= str(input())
-            
-                tts.va_speak('И, последний вопрос. Какой?')    
-                quality_3 = str(input())
-            
-            
-                tts.va_speak(f'Внимание!!, вот что получилось,: вчера, я ходила в цирк, сначала на арену, \
-                выскочил {quality_1}, {puple_1}, за ним выполз {quality_2}, {puple_2}, и они бросались тухлой рыбой целый час,\
-                за тем вышел, клоун у которого в руках был {item_2}, клоун бросил этот{item_2} в зрителей,\
-                и попал прямо в меня. Я обидилась, Достала из своего кармана {quality_3}, {item_1}, \
-                кинула в клоуна, и попала, прямо в лоб. Мне понравился этот цирк. По моему, получилась прикольная история. Соченим еще?')
-            
-                print('pls input number_history/yes/no')
-    
-        else:
-            text='введи занчение -0- или любое другое'
-            tts.va_speak(text)
-            print(text) 
-            pass2=str(input())
-            if pass2 == '0':
-                pass
-            else:
-                pass
-        
-elif p == 'hs3':
-        int3 = str(input())
-        if int3 == 'yes':
-            print('---------------------history-3---------------------')
-            text = 'Извини,'
-            text+= ',На этом всё,'
-            text+='введи, занчение ноль,-0-, или любое, другое'
-            tts.va_speak(text)
-            print(text)
-            pass2=str(input())
-            if pass2 == '0':
-                pass
-            else:
-                pass
-            
-        else:
-            text='введи занчение -0- или любое другое'
-            tts.va_speak(text)
-            print(text) 
-            pass2=str(input())
-            if pass2 == '0':
-                pass
-            else:
-                pass
-else:
-    print('--------------------------error--------------------------')
-    print('pls input -0-')
-    exit_out = str(input())
-    if exit_out == '0':
-        pass
-    else:
-        pass
-        
-        
-        
 stt.va_listen(va_respond)
-
