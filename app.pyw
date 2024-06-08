@@ -6,6 +6,9 @@ from tkinter import ttk, Tk
 from tkinter import messagebox
 from PIL import Image, ImageTk
 import psutil
+    
+# color: fuchsia, gold
+# shrift: Consolas, Comic Sans MS
 
 root=tk.Tk()
 
@@ -84,13 +87,21 @@ def open_window_Modelvois_replacement():
     
     def bg_red():
         hg = Canvas(window_Modelvois_replacement, width=300, height=10, bg='red', highlightthickness=0) #bg='#65da88'
+        # window_Modelvois_replacement.configure(bg = 'red')
         hg.pack(pady=0)
         
     def bg_green():
-  
+        # for frame in window_Modelvois_replacement():
+        #     frame.destroy()
             
         hg_2 = Canvas(window_Modelvois_replacement, width=300, height=10, bg='green', highlightthickness=0)
         hg_2.pack(pady=0)
+    
+    # def bg_red():
+    #     pass
+        
+    # def bg_green():
+    #     pass
         
     btn_aidar = tk.Button(window_Modelvois_replacement, text='Aidar', font = ('Comic Sans MS', 12), command = bg_red, width = '10', 
                     height = '1', fg = 'white', bg  = '#6b1b03', activebackground='gray', border=0, 
@@ -106,6 +117,10 @@ def open_window_Modelvois_replacement():
                     height = '1', fg = 'black', bg  = 'darkgoldenrod', activebackground='gray', border=0, 
                     cursor='hand1')
 
+    
+    
+    
+    # aidar, baya, kseniya, xenia, random
     Modelvois_replacement.pack(pady=0)
     btn_aidar.pack(pady=5)
     btn_baya.pack(pady=5)
@@ -144,6 +159,12 @@ def home_page():
     btn2.pack(pady=5)
     
     home_frame.pack(pady=(10))
+    
+# def btn_mic_click(event):
+#         mic.config(
+#             text='OFF'
+#     )
+# mic.bind('<mic>, btn_mic_click')
      
 def cmd_page():
     
@@ -163,10 +184,10 @@ def cmd_page():
                    font = ('Comic Sans MS', 12))
     
     
-    cmd3_text = tk.Label(home_frame, text = '[__open_sharex__]', 
-                   font = ('Comic Sans MS', 12), fg = 'darkgoldenrod')
-    cmd3 = tk.Label(home_frame, text = 'снимок экрана, запусти снимок', 
-                   font = ('Comic Sans MS', 12))
+    # cmd3_text = tk.Label(home_frame, text = '[__open_sharex__]', 
+    #                font = ('Comic Sans MS', 12), fg = 'darkgoldenrod')
+    # cmd3 = tk.Label(home_frame, text = 'снимок экрана, запусти снимок', 
+    #                font = ('Comic Sans MS', 12))
     
 
     cmd4_text = tk.Label(home_frame, text = '[__open_discord__]', 
@@ -185,6 +206,12 @@ def cmd_page():
     cmd6 = tk.Label(home_frame, text = 'закрыть, заврешение работы, конец работы', 
                    font = ('Comic Sans MS', 12))
     
+    cmd7_text = tk.Label(home_frame, text = '[__history__]', 
+                   font = ('Comic Sans MS', 12), fg = 'darkgoldenrod')
+    cmd7 = tk.Label(home_frame, text = 'навык', 
+                   font = ('Comic Sans MS', 12))
+
+    
     cmd_page.pack()
     
     cmd1_text.pack(pady=(5, 5))
@@ -193,8 +220,8 @@ def cmd_page():
     cmd2_text.pack()
     cmd2.pack()
     
-    cmd3_text.pack()
-    cmd3.pack()
+    # cmd3_text.pack()
+    # cmd3.pack()
     
     cmd4_text.pack()
     cmd4.pack()
@@ -204,6 +231,11 @@ def cmd_page():
     
     cmd6_text.pack()
     cmd6.pack()
+    
+    cmd7_text.pack()
+    cmd7.pack()
+    
+    
     
     home_frame.pack()
 
@@ -251,6 +283,8 @@ def log_page():
     home_frame.pack(pady=10)
 
 
+
+#lines on/off, page arg
 
 def hide_indicators():
     home_indicate.config(bg='black')
