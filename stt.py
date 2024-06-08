@@ -19,8 +19,9 @@ def model_vosk(voskSTT):
     elif voskSTT == 'small':
         return 2
 
+model = vosk.Model("J:\\Stella\\stellaPR\\vosk_model_small_ru_0.4")
 
-print('input vosk model: small or big')
+print('input vosk model: small or big (or pass)')
 voskSTT = str(input())
 if model_vosk(voskSTT) == 1:
     print('model_vosk finish installed: big')
@@ -29,13 +30,17 @@ if model_vosk(voskSTT) == 1:
 elif model_vosk(voskSTT) == 2:
     print('model_vosk finish installed: small')
     model = vosk.Model("J:\\Stella\\stellaPR\\vosk_model_small_ru_0.4")
-        
+
 else:
-    out_red('error, EXIT')
-    out_white('text-auto')
-    for proc in psutil.process_iter():
-        if proc.name() == 'python.exe':
-            proc.terminate()
+    pass
+
+
+# else:
+#     out_red('error, EXIT')
+#     out_white('text-auto')
+#     for proc in psutil.process_iter():
+#         if proc.name() == 'python.exe':
+#             proc.terminate()
 
 
 
