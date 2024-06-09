@@ -174,7 +174,7 @@ def execute_cmd(cmd: str):
     
     elif cmd == 'chat_llama':
         
-        tts.va_speak('Хорошо, давайте начнем оббщение, можете задать мне любые вопросы.')
+        tts.va_speak('Хорошо, давайте начнем общение, можете задать мне любые вопросы.')
         print('0-llama_chat-0 \n input your your question:')
         
         
