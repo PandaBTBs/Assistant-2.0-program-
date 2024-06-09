@@ -24,7 +24,7 @@ img_mic_off=ImageTk.PhotoImage(file='J:\\Stella\\stellaPR\\python_web_pr\\button
 
 
 def Addrun():
-    return subprocess.Popen(['start', 'cmd'], shell = True)
+    return os.system('python run.py')
 
 def Addexit():
     for proc in psutil.process_iter():
