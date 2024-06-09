@@ -9,7 +9,7 @@ import random
 
 
 
-VE_NAME = ('Нейро')
+VE_NAME = ('Стелла')
 
 VA_ALIAS = ('ассистент', 'робот', 'стелла', 'стела', 'стала', 'стоило')
 
@@ -171,12 +171,6 @@ def execute_cmd(cmd: str):
         text = "выключаюсь"
         tts.va_speak(text)
         quit()
-    
-    
-    
-    
-    
-    
     
     elif cmd == 'history':
         tts.va_speak('Хорошо, активирован, навык, истории, Какую историю, Вы, хотите выбрать?')
