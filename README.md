@@ -90,18 +90,18 @@ The following features will be added in the future:
 4. Ability to communicate with the llama neural network ✔ (only only in limited mode: llama-70b)
 ```
 
-![pythonw_HZxSNS2TXK](https://github.com/PandaBTBs/SPN-for-assistent/assets/118614536/4245ef7e-7f70-4cf6-8385-aa94c6a4d31c)
 
-![pythonw_X4TFy6quoO](https://github.com/PandaBTBs/SPN-for-assistent/assets/118614536/4f748cb5-a8a1-4b8b-a33a-366d708af547)
+![pythonw_LwsyvNNvEy](https://github.com/PandaBTBs/Stella-2.0-program-/assets/118614536/ff5e7d8e-769d-4bbb-a228-5bed8ec4cf19)
 
-![pythonw_oqZYOUMJti](https://github.com/PandaBTBs/SPN-for-assistent/assets/118614536/3b230182-d8db-4459-bbb5-777b4843e951)
 
-![pythonw_2z3Rap9aoJ](https://github.com/PandaBTBs/SPN-for-assistent/assets/118614536/3f91bf3f-3474-46b9-9ccd-d214a49c53cf)
+![pythonw_97m04hhFzv](https://github.com/PandaBTBs/Stella-2.0-program-/assets/118614536/99e3dae2-7f8e-451d-b00a-c33c56920337)
 
-![pythonw_nfnRlj0FsC](https://github.com/PandaBTBs/SPN-for-assistent/assets/118614536/603f4bfd-e98b-4f70-bc34-f81c152caeb6)
+![xzi6rvhppI](https://github.com/PandaBTBs/Stella-2.0-program-/assets/118614536/018410b8-e686-4605-baf3-5175836cb59c)
 
-![pythonw_Wcax5ivKLf](https://github.com/PandaBTBs/SPN-for-assistent/assets/118614536/13b14796-b02f-4731-a5a6-a92534a1f57a)
+![pythonw_DSQEtYdIN6](https://github.com/PandaBTBs/Stella-2.0-program-/assets/118614536/31a40fc4-ca13-4842-9939-70edc20349b7)
+![933lYpcMdB](https://github.com/PandaBTBs/Stella-2.0-program-/assets/118614536/b4ea50fa-7241-4332-8dcf-290937f1c687)
+![pythonw_gpTXf4G5Eu](https://github.com/PandaBTBs/Stella-2.0-program-/assets/118614536/ed135928-3aef-4668-901d-1b5180efb48c)
 
-![pythonw_sujii4JWf5](https://github.com/PandaBTBs/SPN-for-assistent/assets/118614536/3d8790a9-321b-493d-88f7-0977454c153e)
+![pythonw_gtG7av0RqH](https://github.com/PandaBTBs/Stella-2.0-program-/assets/118614536/0a4814d0-2cec-4a1c-9b06-25093377887c)
 
 
