@@ -51,11 +51,6 @@ print(f"{VE_NAME}", f"{VA_ALIAS}", tts.va_speak("Ассистент, начал 
 
 print('--Список команд:-- \n- list: список команд, команды, что ты умеешь\n- time: время, текущее время, сейчас времени, который чаc\n - history: навык,\n- open_browser: гугл хром, браузер\n- open_steam: стим, запусти стим \n- open_browser_server: сервер, запусти сервер \n- open_sharex: снимок, снимок экрана \n- open_OBS: запись, запись экрана \n- open_vs: код, программирование \n- open_vtube: аватар, виртуальная студия \n- open_discord: общение, друзья \n- joke: расскажи анекдот, рассмеши, шутка, расскажи шутку, пошути, развесели\n- exit: заврешение работы, конец работы, закрыть\n\n')
 
-
-
-
-
-
 def va_respond(voice: str):
     print(voice)
     if voice.startswith(VA_ALIAS):
