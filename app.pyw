@@ -6,7 +6,7 @@ from tkinter import ttk, Tk
 from tkinter import messagebox
 from PIL import Image, ImageTk
 import psutil
-
+    
 
 root=tk.Tk()
 
@@ -87,11 +87,11 @@ def open_window_Modelvois_replacement():
         hg = Canvas(window_Modelvois_replacement, width=300, height=10, bg='red', highlightthickness=0) #bg='#65da88'
         hg.pack(pady=0)
         
-    def bg_green():        
+    def bg_green():
+
         hg_2 = Canvas(window_Modelvois_replacement, width=300, height=10, bg='green', highlightthickness=0)
         hg_2.pack(pady=0)
-    
-
+        
     btn_aidar = tk.Button(window_Modelvois_replacement, text='Aidar', font = ('Comic Sans MS', 12), command = bg_red, width = '10', 
                     height = '1', fg = 'white', bg  = '#6b1b03', activebackground='gray', border=0, 
                     cursor='hand1') # fg = 'black', bg  = 'darkgoldenrod'
@@ -149,6 +149,7 @@ def home_page():
     
     home_frame.pack(pady=(10))
     
+     
 def cmd_page():
     
     home_frame = tk.Frame(main_frame)
@@ -161,20 +162,37 @@ def cmd_page():
     cmd1 = tk.Label(home_frame, text = 'список команд, команды, что ты умеешья', 
                    font = ('Comic Sans MS', 12))
     
-    cmd2_text = tk.Label(home_frame, text = '[__time__]', 
-                   font = ('Comic Sans MS', 12), fg ='darkgoldenrod')
-    cmd2 = tk.Label(home_frame, text = 'время, текущее время, сейчас времени, который час', 
-                   font = ('Comic Sans MS', 12))
+    # cmd2_text = tk.Label(home_frame, text = '[__time__]', 
+    #                font = ('Comic Sans MS', 12), fg ='darkgoldenrod')
+    # cmd2 = tk.Label(home_frame, text = 'время, текущее время, сейчас времени, который час', 
+    #                font = ('Comic Sans MS', 12))
+    
+    
+    # cmd3_text = tk.Label(home_frame, text = '[__open_sharex__]', 
+    #                font = ('Comic Sans MS', 12), fg = 'darkgoldenrod')
+    # cmd3 = tk.Label(home_frame, text = 'снимок экрана, запусти снимок', 
+    #                font = ('Comic Sans MS', 12))
+    
 
-    cmd4_text = tk.Label(home_frame, text = '[__open_discord__]', 
+    cmd2_text = tk.Label(home_frame, text = '[__open_discord__]', 
                    font = ('Comic Sans MS', 12), fg = 'darkgoldenrod')
-    cmd4 = tk.Label(home_frame, text = 'общение, друзья', 
+    cmd2 = tk.Label(home_frame, text = 'общение, друзья', 
                    font = ('Comic Sans MS', 12))
     
     
-    cmd5_text = tk.Label(home_frame, text = '[__open_vs_code__]', 
+    cmd3_text = tk.Label(home_frame, text = '[__open_vs_code__]', 
                    font = ('Comic Sans MS', 12), fg = 'darkgoldenrod')
-    cmd5 = tk.Label(home_frame, text = 'код, программирование', 
+    cmd3 = tk.Label(home_frame, text = 'код, программирование', 
+                   font = ('Comic Sans MS', 12))
+    
+    cmd4_text = tk.Label(home_frame, text = '[__history__]', 
+                   font = ('Comic Sans MS', 12), fg = 'darkgoldenrod')
+    cmd4 = tk.Label(home_frame, text = 'навык', 
+                   font = ('Comic Sans MS', 12))
+    
+    cmd5_text = tk.Label(home_frame, text = '[__chat_llama__]', 
+                   font = ('Comic Sans MS', 12), fg = 'darkgoldenrod')
+    cmd5 = tk.Label(home_frame, text = 'вопрос', 
                    font = ('Comic Sans MS', 12))
     
     cmd6_text = tk.Label(home_frame, text = '[__exit__]', 
@@ -182,10 +200,6 @@ def cmd_page():
     cmd6 = tk.Label(home_frame, text = 'закрыть, заврешение работы, конец работы', 
                    font = ('Comic Sans MS', 12))
     
-    cmd7_text = tk.Label(home_frame, text = '[__history__]', 
-                   font = ('Comic Sans MS', 12), fg = 'darkgoldenrod')
-    cmd7 = tk.Label(home_frame, text = 'навык', 
-                   font = ('Comic Sans MS', 12))
 
     
     cmd_page.pack()
@@ -196,6 +210,9 @@ def cmd_page():
     cmd2_text.pack()
     cmd2.pack()
     
+    cmd3_text.pack()
+    cmd3.pack()
+    
     cmd4_text.pack()
     cmd4.pack()
     
@@ -204,9 +221,6 @@ def cmd_page():
     
     cmd6_text.pack()
     cmd6.pack()
-    
-    cmd7_text.pack()
-    cmd7.pack()
     
     
     
@@ -255,6 +269,9 @@ def log_page():
     
     home_frame.pack(pady=10)
 
+
+
+#lines on/off, page arg
 
 def hide_indicators():
     home_indicate.config(bg='black')
