@@ -87,6 +87,7 @@ The following features will be added in the future:
 1. Mic ×
 2. replacement spech model ✔ (manual input only)
 3. replacement volume ✔ (manual input only)
+4. Ability to communicate with the llama neural network ✔ (only only in limited mode: llama-70b)
 ```
 
 ![pythonw_HZxSNS2TXK](https://github.com/PandaBTBs/SPN-for-assistent/assets/118614536/4245ef7e-7f70-4cf6-8385-aa94c6a4d31c)
