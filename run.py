@@ -6,6 +6,7 @@ import datetime
 from num2t4ru import num2text
 import webbrowser
 import random
+import replicate
 
 
 
@@ -42,6 +43,8 @@ VA_CMD_LIST = {
         
         "history": ('истории','навык'),
         
+        "chat_llama": ('Ответ', 'Вопрос'),
+        
         "exit": ( 'заврешение работы', 'конец работы', 'закрыть')
         
     }
@@ -50,6 +53,7 @@ print(f"{VE_NAME}", f"{VA_ALIAS}", tts.va_speak("Ассистент, начал 
 
 
 print('--Список команд:-- \n- list: список команд, команды, что ты умеешь\n- time: время, текущее время, сейчас времени, который чаc\n - history: навык,\n- open_browser: гугл хром, браузер\n- open_steam: стим, запусти стим \n- open_browser_server: сервер, запусти сервер \n- open_sharex: снимок, снимок экрана \n- open_OBS: запись, запись экрана \n- open_vs: код, программирование \n- open_vtube: аватар, виртуальная студия \n- open_discord: общение, друзья \n- joke: расскажи анекдот, рассмеши, шутка, расскажи шутку, пошути, развесели\n- exit: заврешение работы, конец работы, закрыть\n\n')
+
 
 def va_respond(voice: str):
     print(voice)
@@ -166,6 +170,23 @@ def execute_cmd(cmd: str):
         text = "выключаюсь"
         tts.va_speak(text)
         quit()
+    
+    
+    elif cmd == 'chat_llama':
+        
+        tts.va_speak('Хорошо, давайте начнем оббщение, можете задать мне любые вопросы.')
+        print('0-llama_chat-0 \n input your your question:')
+        
+        
+        input_log = input()
+        for event in replicate.stream(
+            "meta/meta-llama-guard-2-70b",
+            input={
+                "prompt": input_log
+            },
+            ):
+            print(str(event), end="")
+            # tts.va_speak(str(event))
     
     elif cmd == 'history':
         tts.va_speak('Хорошо, активирован, навык, истории, Какую историю, Вы, хотите выбрать?')
