@@ -183,7 +183,7 @@ def execute_cmd(cmd: str):
         print('pls input History: hs1, hs2, hs3')
         
         uy = str(input())
-        
+  
         
         if uy == 'hs1':
             print('---------------------history-1---------------------')
@@ -223,63 +223,63 @@ def execute_cmd(cmd: str):
             print('pls input number_history') 
             intHS1 = str(input())
             
-        if intHS1 == 'hs2':
-            print('---------------------history-2---------------------')
-            text = 'Отлично,'
-            text+= 'Текст, про, ци+рк'
-            tts.va_speak(text)
+            if intHS1 == 'hs2':
+                print('---------------------history-2---------------------')
+                text = 'Отлично,'
+                text+= 'Текст, про, ци+рк'
+                tts.va_speak(text)
             
-            tts.va_speak('Для начала, назови, знаменитого мужчину')    
-            puple_1 = str(input())
+                tts.va_speak('Для начала, назови, знаменитого мужчину')    
+                puple_1 = str(input())
             
-            tts.va_speak('какой?')    
-            quality_1 = str(input())
+                tts.va_speak('какой?')    
+                quality_1 = str(input())
             
-            tts.va_speak('Назови, еще, одного, знаменитого мужчину')    
-            puple_2 = str(input())
+                tts.va_speak('Назови, еще, одного, знаменитого мужчину')    
+                puple_2 = str(input())
             
-            tts.va_speak('Какой? в несколько слов')    
-            quality_2 = str(input())
+                tts.va_speak('Какой? в несколько слов')    
+                quality_2 = str(input())
             
-            tts.va_speak('Теперь ,назови, предмет, мужчкого рода')    
-            item_1 = str(input())
+                tts.va_speak('Теперь ,назови, предмет, мужчкого рода')    
+                item_1 = str(input())
             
-            tts.va_speak('Какой?')    
-            quality_item = str(input())
+                tts.va_speak('Какой?')    
+                quality_item = str(input())
             
-            tts.va_speak('Назови, ещё, один предмет, мужчкого рода')    
-            item_2= str(input())
+                tts.va_speak('Назови, ещё, один предмет, мужчкого рода')    
+                item_2= str(input())
             
-            tts.va_speak('И, последний вопрос. Какой?')    
-            quality_3 = str(input())
+                tts.va_speak('И, последний вопрос. Какой?')    
+                quality_3 = str(input())
             
             
-            tts.va_speak(f'Внимание!!, вот что получилось,: вчера, я ходила в цирк, сначала на арену, \
+                tts.va_speak(f'Внимание!!, вот что получилось,: вчера, я ходила в цирк, сначала на арену, \
             выскочил {quality_1}, {puple_1}, за ним выполз {quality_2}, {puple_2}, и они бросались тухлой рыбой целый час,\
             за тем вышел, клоун у которого в руках был {item_2}, клоун бросил этот{item_2} в зрителей,\
             и попал прямо в меня. Я обидилась, Достала из своего кармана {quality_3}, {item_1}, \
             кинула в клоуна, и попала, прямо в лоб. Мне понравился этот цирк. По моему, получилась прикольная история. Соченим еще?')
         
-        if intHS1 == 'hs3':
-            print('---------------------history-3---------------------')
-            text = 'Извини,'
-            text+= ',Но она недоступна,'
-            text+='введи, занчение ноль,-0-, или любое, другое'
-            tts.va_speak(text)
-            print(text)
-            pass2=str(input())
-            if pass2 == '0':
-                pass
-            else:
-                pass
+            if intHS1 == 'hs3':
+                print('---------------------history-3---------------------')
+                text = 'Извини,'
+                text+= ',Но она недоступна,'
+                text+='введи, занчение ноль,-0-, или любое, другое'
+                tts.va_speak(text)
+                print(text)
+                pass2=str(input())
+                if pass2 == '0':
+                    pass
+                else:
+                    pass
         
-        else:
-            print('Выход, введите любое значение.')
-            i = str(input())
-            if i == 'exit':
-                pass
             else:
-                pass
+                print('Выход, введите любое значение.')
+                i = str(input())
+                if i == 'exit':
+                    pass
+                else:
+                    pass
             
             
         if uy == 'hs2':
@@ -324,35 +324,35 @@ def execute_cmd(cmd: str):
             intHS2 = str(input()) 
             
             
-        if intHS2 == 'hs1':
-            print('---------------------history-1---------------------')
-            text = 'Хорошо, давайте, придумаем, занимательную историю'
-            text+= 'Объяснительная, об, опоздании'
-            tts.va_speak(text)
+            if intHS2 == 'hs1':
+                print('---------------------history-1---------------------')
+                text = 'Хорошо, давайте, придумаем, занимательную историю'
+                text+= 'Объяснительная, об, опоздании'
+                tts.va_speak(text)
         
         
-            tts.va_speak('Для начала, скажи, куда мы опоздали')
-            locally_1 = str(input())
+                tts.va_speak('Для начала, скажи, куда мы опоздали')
+                locally_1 = str(input())
         
-            tts.va_speak('теперь, назови животное, муж+ского рода')
-            genus_m = str(input())
+                tts.va_speak('теперь, назови животное, муж+ского рода')
+                genus_m = str(input())
         
-            tts.va_speak('теперь, назови, животное, женского рода')
-            genus_w = str(input())
+                tts.va_speak('теперь, назови, животное, женского рода')
+                genus_w = str(input())
         
-            tts.va_speak('где?')
-            locally_2 = str(input())
+                tts.va_speak('где?')
+                locally_2 = str(input())
         
-            tts.va_speak('животное, во множественном, числе')
-            animals = str(input())
+                tts.va_speak('животное, во множественном, числе')
+                animals = str(input())
         
-            tts.va_speak('куда?')
-            locally_3 = str(input())
+                tts.va_speak('куда?')
+                locally_3 = str(input())
         
-            tts.va_speak('и, на последок, скажи, имя, твоего знакомого')
-            input_us = str(input())
+                tts.va_speak('и, на последок, скажи, имя, твоего знакомого')
+                input_us = str(input())
         
-            tts.va_speak(f'И так, объяснительная, сегодня когда я шёл {locally_1}, \
+                tts.va_speak(f'И так, объяснительная, сегодня когда я шёл {locally_1}, \
             на меня внезапно свалился мокрый {genus_m}, я закричал как {genus_w},\
             и потерял сознание, очнулся я в {locally_2}, и сказал, отвезите меня {locally_1},\
             мне очень надо, но эти мои {animals}, почему то, отвезли меня {locally_3},\
@@ -362,39 +362,39 @@ def execute_cmd(cmd: str):
             print('pls input number_history') 
             intHS3 = str(input())
             
-        if intHS3  == 'hs3':
-            print('---------------------history-3---------------------')
-            text = 'Извини,'
-            text+= ',Но она недоступна,'
-            text+='введи, занчение ноль,-0-, или любое, другое'
-            tts.va_speak(text)
-            print(text)
-            pass2=str(input())
-            if pass2 == '0':
-                pass
-            else:
-                pass
+            if intHS3  == 'hs3':
+                print('---------------------history-3---------------------')
+                text = 'Извини,'
+                text+= ',Но она недоступна,'
+                text+='введи, занчение ноль,-0-, или любое, другое'
+                tts.va_speak(text)
+                print(text)
+                pass2=str(input())
+                if pass2 == '0':
+                    pass
+                else:
+                    pass
              
-        if intHS2 == 'hs3':
-            print('---------------------history-3---------------------')
-            text = 'Извини,'
-            text+= ',Но она недоступна,'
-            text+='введи, занчение ноль,-0-, или любое, другое'
-            tts.va_speak(text)
-            print(text)
-            pass2=str(input())
-            if pass2 == '0':
-                pass
-            else:
-                pass
+            if intHS2 == 'hs3':
+                print('---------------------history-3---------------------')
+                text = 'Извини,'
+                text+= ',Но она недоступна,'
+                text+='введи, занчение ноль,-0-, или любое, другое'
+                tts.va_speak(text)
+                print(text)
+                pass2=str(input())
+                if pass2 == '0':
+                    pass
+                else:
+                    pass
 
-        else:
-            print('Выход, введите любое значение.')
-            i = str(input())
-            if i == 'exit':
-                pass
             else:
-                pass
+                print('Выход, введите любое значение.')
+                i = str(input())
+                if i == 'exit':
+                    pass
+                else:
+                    pass
 
 
         if uy  == 'hs3':
