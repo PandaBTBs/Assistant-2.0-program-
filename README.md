@@ -70,8 +70,7 @@ Open `run.bat`.
 1. For the commands to work, you must say the following: `{VA_ALIAS}_{VA_CMD_LIST}`. In place of the programs in `os.startfile()`, insert your path to the program (note, only exe files)
 2. File
 
-
-## Instructions for program - program no active (manual input via cmd) but press 'start'
+## Instructions for program 
 Place the program file in the assistant folder
 1.  Replace links with access to `img`(line 12, 21, 22, 35, 55, 75).
 2. Install pip file `PIL`.
