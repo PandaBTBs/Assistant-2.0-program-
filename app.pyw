@@ -81,7 +81,7 @@ def open_window_Modelvois_replacement():
     window_Modelvois_replacement.resizable(width=False, height=False)
     window_Modelvois_replacement.title('Modelvois')
     window_Modelvois_replacement.resizable(0, 0)
-    Modelvois_replacement= Canvas(window_Modelvois_replacement, width=300, height=10, bg='black', highlightthickness=0) #bg='#65da88'
+    Modelvois_replacement= Canvas(window_Modelvois_replacement, width=300, height=10, bg='#65da88', highlightthickness=0) #bg='#65da88'
         
     btn_aidar = tk.Button(window_Modelvois_replacement, text='Aidar', font = ('Comic Sans MS', 12), width = '10', 
                     height = '1', fg = 'black', bg  = 'darkgoldenrod', activebackground='gray', border=0, 
