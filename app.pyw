@@ -36,7 +36,7 @@ def open_window_Modelspeech_replacement():
     img=PhotoImage(file='J:\\Stella\\stellaPR\\python_web_pr\\alisa.png')
     window_Modelspeech_replacement.iconphoto(False,img)
     window_Modelspeech_replacement.resizable(width=False, height=False)
-    window_Modelspeech_replacement.title('Ассистент Amy - Modelspeek')
+    window_Modelspeech_replacement.title('Modelspeek')
     window_Modelspeech_replacement.resizable(0, 0)
     window_Modelspeech= Canvas(window_Modelspeech_replacement, width=300, height=10, bg='#65da88', highlightthickness=0)
     
@@ -56,7 +56,7 @@ def open_window_Modelvolume_replacemen():
     img=PhotoImage(file='J:\\Stella\\stellaPR\\python_web_pr\\alisa.png')
     window_Modelvolume_replacemen.iconphoto(False,img)
     window_Modelvolume_replacemen.resizable(width=False, height=False)
-    window_Modelvolume_replacemen.title('Ассистент Amy - Modelvolume')
+    window_Modelvolume_replacemen.title('Modelvolume')
     window_Modelvolume_replacemen.resizable(0, 0)
     window_Modelvolume= Canvas(window_Modelvolume_replacemen, width=300, height=10, bg='#65da88', highlightthickness=0)
     
@@ -79,7 +79,7 @@ def open_window_Modelvois_replacement():
     img=PhotoImage(file='J:\\Stella\\stellaPR\\python_web_pr\\alisa.png')
     window_Modelvois_replacement.iconphoto(False,img)
     window_Modelvois_replacement.resizable(width=False, height=False)
-    window_Modelvois_replacement.title('Ассистент Amy - Modelvois')
+    window_Modelvois_replacement.title('Modelvois')
     window_Modelvois_replacement.resizable(0, 0)
     Modelvois_replacement= Canvas(window_Modelvois_replacement, width=300, height=10, bg='black', highlightthickness=0) #bg='#65da88'
         
