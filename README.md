@@ -92,8 +92,6 @@ The following features will be added in the future:
 
 
 ![pythonw_LwsyvNNvEy](https://github.com/PandaBTBs/Stella-2.0-program-/assets/118614536/ff5e7d8e-769d-4bbb-a228-5bed8ec4cf19)
-
-
 ![pythonw_97m04hhFzv](https://github.com/PandaBTBs/Stella-2.0-program-/assets/118614536/99e3dae2-7f8e-451d-b00a-c33c56920337)
 
 ![xzi6rvhppI](https://github.com/PandaBTBs/Stella-2.0-program-/assets/118614536/018410b8-e686-4605-baf3-5175836cb59c)
