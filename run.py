@@ -51,6 +51,11 @@ print(f"{VE_NAME}", f"{VA_ALIAS}", tts.va_speak("Ассистент, начал 
 
 print('--Список команд:-- \n- list: список команд, команды, что ты умеешь\n- time: время, текущее время, сейчас времени, который чаc\n - history: навык,\n- open_browser: гугл хром, браузер\n- open_steam: стим, запусти стим \n- open_browser_server: сервер, запусти сервер \n- open_sharex: снимок, снимок экрана \n- open_OBS: запись, запись экрана \n- open_vs: код, программирование \n- open_vtube: аватар, виртуальная студия \n- open_discord: общение, друзья \n- joke: расскажи анекдот, рассмеши, шутка, расскажи шутку, пошути, развесели\n- exit: заврешение работы, конец работы, закрыть\n\n')
 
+
+
+
+
+
 def va_respond(voice: str):
     print(voice)
     if voice.startswith(VA_ALIAS):
@@ -59,6 +64,7 @@ def va_respond(voice: str):
             tts.va_speak("чего тебе надо? , скажи моё имя, а потом команды!")
         else:
             execute_cmd(cmd['cmd'])
+
 
 def filter_cmd(raw_voice: str):
     cmd = raw_voice
@@ -93,17 +99,6 @@ def execute_cmd(cmd: str):
         text += 'запускать приложения...'
         tts.va_speak(text)
         pass
-    
-    
-    elif cmd == 'history':
-        text = 'Хорошо, давайте придумаем занимательные истории'
-        text+= 'назовите свой любимы цвет'
-        tts.va_speak(text)
-        color = str(input())
-        tts.va_speak('отлично, теперь назовите свою любимую погоду')
-        wt = str(input())
-        tts.va_speak('ВНИМАНИЕ, вот что получилось:')
-        tts.va_speak(f'весной в {wt} погоду, когда не+бо окрасилось в {color} я был одет в жёлтую куртку')
     
     elif cmd == 'time':
         now = datetime.datetime.now()
@@ -177,16 +172,20 @@ def execute_cmd(cmd: str):
         tts.va_speak(text)
         quit()
     
+    
+    
+    
+    
+    
+    
     elif cmd == 'history':
-        
         tts.va_speak('Хорошо, активирован, навык, истории, Какую историю, Вы, хотите выбрать?')
         print('pls input History: hs1, hs2, hs3')
         
+        uy = str(input())
         
-        history = str(input())
         
-        
-        if history == 'hs1':
+        if uy == 'hs1':
             print('---------------------history-1---------------------')
             text = 'Хорошо, давайте, придумаем, занимательную историю'
             text+= 'Объяснительная, об, опоздании'
@@ -221,8 +220,8 @@ def execute_cmd(cmd: str):
             и от туда, я шёл пешком, пока меня не подвёз пьяный {input_us}. Вот, почему я опоздал\
             на {locally_1}. Мне кажется, получилось прикольно. Хотите, соченить еще?')
             
-        print('pls input number_history') 
-        intHS1 = str(input())
+            print('pls input number_history') 
+            intHS1 = str(input())
             
         if intHS1 == 'hs2':
             print('---------------------history-2---------------------')
@@ -283,7 +282,7 @@ def execute_cmd(cmd: str):
                 pass
             
             
-        if history == 'hs2':
+        if uy == 'hs2':
             print('---------------------history-2---------------------')
             text = 'Отлично,'
             text+= 'Текст, про, ци+рк'
@@ -321,8 +320,8 @@ def execute_cmd(cmd: str):
             кинула в клоуна, и попала, прямо в лоб. Мне понравился этот цирк. По моему, получилась прикольная история. Соченим еще?')
             
             
-        print('pls input number_history') 
-        intHS2 = str(input()) 
+            print('pls input number_history') 
+            intHS2 = str(input()) 
             
             
         if intHS2 == 'hs1':
@@ -359,6 +358,22 @@ def execute_cmd(cmd: str):
             мне очень надо, но эти мои {animals}, почему то, отвезли меня {locally_3},\
             и от туда, я шёл пешком, пока меня не подвёз пьяный {input_us}. Вот, почему я опоздал\
             на {locally_1}. Мне кажется, получилось прикольно. Хотите, соченить еще?')
+            
+            print('pls input number_history') 
+            intHS3 = str(input())
+            
+        if intHS3  == 'hs3':
+            print('---------------------history-3---------------------')
+            text = 'Извини,'
+            text+= ',Но она недоступна,'
+            text+='введи, занчение ноль,-0-, или любое, другое'
+            tts.va_speak(text)
+            print(text)
+            pass2=str(input())
+            if pass2 == '0':
+                pass
+            else:
+                pass
              
         if intHS2 == 'hs3':
             print('---------------------history-3---------------------')
@@ -382,7 +397,7 @@ def execute_cmd(cmd: str):
                 pass
 
 
-        if history  == 'hs3':
+        if uy  == 'hs3':
             print('---------------------history-3---------------------')
             text = 'Извини,'
             text+= ',Но она недоступна,'
