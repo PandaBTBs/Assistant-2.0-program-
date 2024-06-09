@@ -82,23 +82,14 @@ def open_window_Modelvois_replacement():
     window_Modelvois_replacement.title('Ассистент Amy - Modelvois')
     window_Modelvois_replacement.resizable(0, 0)
     Modelvois_replacement= Canvas(window_Modelvois_replacement, width=300, height=10, bg='black', highlightthickness=0) #bg='#65da88'
-    
-    def bg_red():
-        hg = Canvas(window_Modelvois_replacement, width=300, height=10, bg='red', highlightthickness=0) #bg='#65da88'
-        hg.pack(pady=0)
         
-    def bg_green():
-
-        hg_2 = Canvas(window_Modelvois_replacement, width=300, height=10, bg='green', highlightthickness=0)
-        hg_2.pack(pady=0)
-        
-    btn_aidar = tk.Button(window_Modelvois_replacement, text='Aidar', font = ('Comic Sans MS', 12), command = bg_red, width = '10', 
-                    height = '1', fg = 'white', bg  = '#6b1b03', activebackground='gray', border=0, 
-                    cursor='hand1') # fg = 'black', bg  = 'darkgoldenrod'
+    btn_aidar = tk.Button(window_Modelvois_replacement, text='Aidar', font = ('Comic Sans MS', 12), width = '10', 
+                    height = '1', fg = 'black', bg  = 'darkgoldenrod', activebackground='gray', border=0, 
+                    cursor='hand1') 
     
-    btn_baya =tk.Button(window_Modelvois_replacement, text='Baya', font = ('Comic Sans MS', 12), command= bg_green, width = '10', 
-                    height = '1', fg = 'white', bg  = '#116407', activebackground='gray', border=0, 
-                    cursor='hand1')
+    btn_baya =tk.Button(window_Modelvois_replacement, text='Baya', font = ('Comic Sans MS', 12), width = '10', 
+                    height = '1', fg = 'black', bg  = 'darkgoldenrod', activebackground='gray', border=0, 
+                    cursor='hand1') #command
     btn_kseniya = tk.Button(window_Modelvois_replacement, text='Kseniya', font = ('Comic Sans MS', 12), command= Addrun, width = '10', 
                     height = '1', fg = 'black', bg  = 'darkgoldenrod', activebackground='gray', border=0, 
                     cursor='hand1')
