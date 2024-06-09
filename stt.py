@@ -33,19 +33,6 @@ elif model_vosk(voskSTT) == 2:
 else:
     model = vosk.Model("J:\\Stella\\stellaPR\\vosk_model_small_ru_0.4")
 
-
-# else:
-#     out_red('error, EXIT')
-#     out_white('text-auto')
-#     for proc in psutil.process_iter():
-#         if proc.name() == 'python.exe':
-#             proc.terminate()
-
-
-
-# model = vosk.Model("J:\\Stella\\stellaPR\\vosk_model_small_ru_0.4")
-
-
 samplerate = 16000
 device = 1
 
