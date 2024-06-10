@@ -1,3 +1,4 @@
+# python -m sounddevice
 import vosk
 import sys
 import sounddevice as sd
@@ -13,25 +14,29 @@ def out_red(text):
 def out_white(text):
     print("\033[39m {}" .format(text))
 
-def model_vosk(voskSTT):
-    if voskSTT == 'big':
+def model_vosk(f_open):
+    if f_open == 'big':
         return 1
-    elif voskSTT == 'small':
+    elif f_open == 'small':
         return 2
 
 
-print('input vosk model: small or big (or pass - small model)')
-voskSTT = str(input())
-if model_vosk(voskSTT) == 1:
+
+
+f = open('vosk.txt', 'r', encoding='utf-8')
+f_open = f.read()
+
+if model_vosk(f_open) == 1:
     print('model_vosk finish installed: big')
     model = vosk.Model("J:\\Stella\\stellaPR\\vosk_model_big_ru_0.10")
 
-elif model_vosk(voskSTT) == 2:
+elif model_vosk(f_open) == 2:
     print('model_vosk finish installed: small')
     model = vosk.Model("J:\\Stella\\stellaPR\\vosk_model_small_ru_0.4")
 
 else:
     model = vosk.Model("J:\\Stella\\stellaPR\\vosk_model_small_ru_0.4")
+
 
 samplerate = 16000
 device = 1
