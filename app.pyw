@@ -53,7 +53,8 @@ def rep_speech_model_xenia():
 
 
 
-def Addrun(): return subprocess.call('python run.py', shell = True) # работае даже без консоли
+def Addrun(): return os.system("start cmd")
+    # subprocess.call('python run.py', shell = True) # работае даже без консоли
     # return os.system('python run.py')
 
 def Addexit():
