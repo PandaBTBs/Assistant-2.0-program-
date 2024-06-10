@@ -16,84 +16,49 @@ def out_blue(text):
 def out_white(text):
     print("\033[39m {}" .format(text))
     
-    
-def model_change(speech):
-    if speech == 'aidar':
+
+def model_change(f_open):
+    if f_open == 'aidar':
         return 1
-    elif speech == 'baya':
+
+def model_change(f_open):
+    if f_open == 'baya':
         return 2
-    elif speech == 'kseniya':
+
+def model_change(f_open):
+    if f_open == 'kseniya':
         return 3
-    elif speech == 'xenia':
-        return 3
+
+def model_change(f_open):
+    if f_open == 'xenia':
+        return 4
     
+    
+f = open('speech.txt', 'r', encoding='utf-8')
+f_open = f.read()
+
 
 speaker = 'baya'
 
-time.sleep(1)
-out_yellow('. \n\
-                continue without selecting a model & - input: on/off  / \n\n\
-                would you like to customize the vosk model and voice & - input: model \n')
+if model_change(f_open) == 1:
+    print('aidar')
+    speaker = 'aidar'
+
+if model_change(f_open) == 2:
+    print('baya')
+    speaker = 'baya'
+
+if model_change(f_open) == 3:
+    print('kseniya')
+    speaker = 'kseniya'
+
+if model_change(f_open) == 4:
+    print('xenia')
+    speaker = 'xenia'
     
-p  = str(input())
-if p == 'on': 
-        print('--------start jmonge--------')
-        pass
-elif p == 'off':
-    out_yellow('--------off pr*******--------')
-    out_white('text-auto')
-    for proc in psutil.process_iter():
-        if proc.name() == 'python.exe':
-            proc.terminate()
-                
-        
-elif p == 'model':
-            
-    print('input speech: aidar, baya, kseniya, xenia')
-        
-    speech = str(input())
-        
-            
-    if model_change(speech) == 1:
-            out_red('speech finish installed: aidar')
-            out_red('-------------------------start-------------------------')
-            out_white('text-auto')
-            speaker = 'aidar' 
-    
-    elif model_change(speech) == 2:
-            out_red('speech finish installed: baya')
-            out_red('-------------------------start-------------------------')
-            out_white('text-auto')
-            speaker = 'baya'
-    
-    elif model_change(speech) == 3:
-            out_red('model_vosk and speech finish installed: kseniya')
-            out_red('-------------------------start-------------------------')
-            out_white('text-auto')
-            speaker = 'kseniya'
-    
-    elif model_change(speech) == 4:
-            out_red('model_vosk and speech finish installed: xenia')
-            out_red('-------------------------start-------------------------')
-            out_white('text-auto')
-            speaker = 'xenia'
-            
-        
-    else:
-        out_red('error, EXIT')
-        out_white('text-auto')
-        for proc in psutil.process_iter():
-            if proc.name() == 'python.exe':
-                proc.terminate()
-        
 else:
-    out_yellow('--------no list cmds, close pr................--------')
-    out_white('text-auto')
-    for proc in psutil.process_iter():
-        if proc.name() == 'python.exe':
-            proc.terminate()
-
-
+    print('baya')
+    speaker = 'baya'
 
 language = 'ru'
 model_id = 'ru_v3'
