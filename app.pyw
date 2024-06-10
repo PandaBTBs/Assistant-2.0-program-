@@ -6,7 +6,25 @@ from tkinter import ttk, Tk
 from tkinter import messagebox
 from PIL import Image, ImageTk
 import psutil
-    
+
+# from winreg import *
+
+# jff mic
+# REG_PATH = r"SOFTWARE\Microsoft\Windows\CurrentVersion\MMDevices\Audio\Capture\{caadea3a-3ab4-4f9e-b558-0a784faf03b6}"
+
+# def mic_On(name, value):
+#     try:
+#         CreateKey(HKEY_LOCAL_MACHINE, REG_PATH)
+#         registry_key = OpenKey(HKEY_CURRENT_USER, REG_PATH, 0,
+#                                        KEY_WRITE)
+#         SetValueEx(registry_key, name, 0, REG_SZ, value)
+#         CloseKey(registry_key)
+#         return True
+#     except WindowsError:
+#         print("error")
+#         return False
+
+# mic_On("DeviceState","0x00000001")
 
 root=tk.Tk()
 
@@ -22,6 +40,37 @@ root['bg'] = 'black'
 img_mic_on=ImageTk.PhotoImage(file='J:\\Stella\\stellaPR\\python_web_pr\\button_img.ico\\mic-on.png')
 img_mic_off=ImageTk.PhotoImage(file='J:\\Stella\\stellaPR\\python_web_pr\\button_img.ico\\mic-off.png')
 
+#vosk model
+
+def rep_model_vosk_small():
+    f = open('vosk.txt', 'w', encoding='utf-8')
+    f.write('small')
+    
+def rep_model_vosk_big():
+    f = open('vosk.txt', 'w', encoding='utf-8')
+    f.write('big')
+    
+
+#speech
+def rep_speech_model_aidar():
+    f = open('speech.txt', 'w', encoding='utf-8')
+    f.write('aidar')
+    
+def rep_speech_model_baya():
+    f = open('speech.txt', 'w', encoding='utf-8')
+    f.write('baya')
+
+def rep_speech_model_kseniya():
+    f = open('speech.txt', 'w', encoding='utf-8')
+    f.write('kseniya')
+    
+def rep_speech_model_xenia():
+    f = open('speech.txt', 'w', encoding='utf-8')
+    f.write('xenia')
+
+
+
+
 
 def Addrun():
     return os.system('python run.py')
@@ -30,48 +79,6 @@ def Addexit():
     for proc in psutil.process_iter():
         if proc.name() == 'python.exe':
             proc.terminate()
-
-def open_window_Modelspeech_replacement():
-    window_Modelspeech_replacement = Toplevel(root)
-    img=PhotoImage(file='J:\\Stella\\stellaPR\\python_web_pr\\alisa.png')
-    window_Modelspeech_replacement.iconphoto(False,img)
-    window_Modelspeech_replacement.resizable(width=False, height=False)
-    window_Modelspeech_replacement.title('Modelspeek')
-    window_Modelspeech_replacement.resizable(0, 0)
-    window_Modelspeech= Canvas(window_Modelspeech_replacement, width=300, height=10, bg='#65da88', highlightthickness=0)
-    
-    btn_vosk = tk.Button(window_Modelspeech_replacement, text ='Vosk model', font=('Comic Sans MS', 12), command= Addrun, width = '10', 
-                    height = '1', fg = 'black', bg  = 'darkgoldenrod', activebackground='gray', border=0, 
-                    cursor='hand1')
-    btn_alt = tk.Button(window_Modelspeech_replacement, text ='Alt model', font=('Comic Sans MS', 12), command= Addrun, width = '10', 
-                    height = '1', fg = 'black', bg  = 'darkgoldenrod', activebackground='gray', border=0, 
-                    cursor='hand1')
-    
-    window_Modelspeech.pack(pady=3)
-    btn_vosk.pack(pady=5)
-    btn_alt.pack(pady=5)
-
-def open_window_Modelvolume_replacemen():
-    window_Modelvolume_replacemen = Toplevel(root)
-    img=PhotoImage(file='J:\\Stella\\stellaPR\\python_web_pr\\alisa.png')
-    window_Modelvolume_replacemen.iconphoto(False,img)
-    window_Modelvolume_replacemen.resizable(width=False, height=False)
-    window_Modelvolume_replacemen.title('Modelvolume')
-    window_Modelvolume_replacemen.resizable(0, 0)
-    window_Modelvolume= Canvas(window_Modelvolume_replacemen, width=300, height=10, bg='#65da88', highlightthickness=0)
-    
-    btn_big = tk.Button(window_Modelvolume_replacemen, text ='Big model', font=('Comic Sans MS', 12), command= Addrun, width = '10', 
-                    height = '1', fg = 'black', bg  = 'darkgoldenrod', activebackground='gray', border=0, 
-                    cursor='hand1')
-    btn_small = tk.Button(window_Modelvolume_replacemen, text ='Small model', font=('Comic Sans MS', 12), command= Addrun, width = '10', 
-                    height = '1', fg = 'black', bg  = 'darkgoldenrod', activebackground='gray', border=0, 
-                    cursor='hand1')
-    
-    window_Modelvolume.pack(pady=3)
-    btn_big.pack(pady=5)
-    btn_small.pack(pady=5)
-
-
 
 # speech
 def open_window_Modelvois_replacement():
@@ -85,15 +92,15 @@ def open_window_Modelvois_replacement():
         
     btn_aidar = tk.Button(window_Modelvois_replacement, text='Aidar', font = ('Comic Sans MS', 12), width = '10', 
                     height = '1', fg = 'black', bg  = 'darkgoldenrod', activebackground='gray', border=0, 
-                    cursor='hand1') 
+                    cursor='hand1', command=rep_speech_model_aidar) 
     
     btn_baya =tk.Button(window_Modelvois_replacement, text='Baya', font = ('Comic Sans MS', 12), width = '10', 
                     height = '1', fg = 'black', bg  = 'darkgoldenrod', activebackground='gray', border=0, 
-                    cursor='hand1') #command
-    btn_kseniya = tk.Button(window_Modelvois_replacement, text='Kseniya', font = ('Comic Sans MS', 12), command= Addrun, width = '10', 
+                    cursor='hand1', command=rep_speech_model_baya) #command
+    btn_kseniya = tk.Button(window_Modelvois_replacement, text='Kseniya', font = ('Comic Sans MS', 12), command= rep_speech_model_kseniya, width = '10', 
                     height = '1', fg = 'black', bg  = 'darkgoldenrod', activebackground='gray', border=0, 
                     cursor='hand1')
-    btn_xenia =tk.Button(window_Modelvois_replacement, text='xenia', font = ('Comic Sans MS', 12), command= Addrun, width = '10', 
+    btn_xenia =tk.Button(window_Modelvois_replacement, text='xenia', font = ('Comic Sans MS', 12), command= rep_speech_model_xenia, width = '10', 
                     height = '1', fg = 'black', bg  = 'darkgoldenrod', activebackground='gray', border=0, 
                     cursor='hand1')
 
@@ -108,6 +115,48 @@ def open_window_Modelvois_replacement():
     btn_xenia.pack(pady=5)
     Modelvois_replacement.pack(pady=5)
 
+
+# def open_window_Modelspeech_replacement():
+#     window_Modelspeech_replacement = Toplevel(root)
+#     img=PhotoImage(file='J:\\Stella\\stellaPR\\python_web_pr\\alisa.png')
+#     window_Modelspeech_replacement.iconphoto(False,img)
+#     window_Modelspeech_replacement.resizable(width=False, height=False)
+#     window_Modelspeech_replacement.title('Modelspeek')
+#     window_Modelspeech_replacement.resizable(0, 0)
+#     window_Modelspeech= Canvas(window_Modelspeech_replacement, width=300, height=10, bg='#65da88', highlightthickness=0)
+    
+#     btn_vosk = tk.Button(window_Modelspeech_replacement, text ='Vosk model', font=('Comic Sans MS', 12), width = '10', 
+#                     height = '1', fg = 'black', bg  = 'darkgoldenrod', activebackground='gray', border=0, 
+#                     cursor='hand1')
+#     btn_alt = tk.Button(window_Modelspeech_replacement, text ='Alt model', font=('Comic Sans MS', 12), width = '10', 
+#                     height = '1', fg = 'black', bg  = 'darkgoldenrod', activebackground='gray', border=0, 
+#                     cursor='hand1')
+    
+#     window_Modelspeech.pack(pady=3)
+#     btn_vosk.pack(pady=5)
+#     btn_alt.pack(pady=5)
+
+def open_window_Modelvolume_replacemen():
+    window_Modelvolume_replacemen = Toplevel(root)
+    img=PhotoImage(file='J:\\Stella\\stellaPR\\python_web_pr\\alisa.png')
+    window_Modelvolume_replacemen.iconphoto(False,img)
+    window_Modelvolume_replacemen.resizable(width=False, height=False)
+    window_Modelvolume_replacemen.title('Modelvolume')
+    window_Modelvolume_replacemen.resizable(0, 0)
+    window_Modelvolume= Canvas(window_Modelvolume_replacemen, width=300, height=10, bg='#65da88', highlightthickness=0)
+    
+    btn_big = tk.Button(window_Modelvolume_replacemen, text ='Big model', font=('Comic Sans MS', 12), command= rep_model_vosk_big, width = '10', 
+                    height = '1', fg = 'black', bg  = 'darkgoldenrod', activebackground='gray', border=0, 
+                    cursor='hand1')
+    btn_small = tk.Button(window_Modelvolume_replacemen, text ='Small model', font=('Comic Sans MS', 12), command= rep_model_vosk_small, width = '10', 
+                    height = '1', fg = 'black', bg  = 'darkgoldenrod', activebackground='gray', border=0, 
+                    cursor='hand1')
+    
+    window_Modelvolume.pack(pady=3)
+    btn_big.pack(pady=5)
+    btn_small.pack(pady=5)
+
+
 def home_page():
     home_frame = tk.Frame(main_frame)
     
@@ -121,9 +170,9 @@ def home_page():
                     height = '1', fg = 'black', bg  = 'darkgoldenrod', activebackground='gray', border=0, 
                     cursor='hand1')
     
-    mic = tk.Button(home_frame, text='ON', font = ('Comic Sans MS', 12), command= Addrun,
+    mic = tk.Button(home_frame, text='ON', font = ('Comic Sans MS', 12),
                     width = '180', height = '40', fg = 'black', bg  = 'darkgoldenrod', activebackground='gray', 
-                    image=img_mic_on, compound=RIGHT, border=0, cursor='hand1') 
+                    image=img_mic_on, compound=RIGHT, border=0, cursor='hand1') #command= Addrun,
     
     #root/window
     btn2 = tk.Button(home_frame, text='OUTPUT', font = ('Comic Sans MS', 12), command= Addexit,
@@ -223,24 +272,24 @@ def setting_page():
     
     setting = tk.Label(home_frame, text = 'Setting\n', font = ('Bold', 24))
     
-    inst = tk.Label(home_frame, text = 'Model speech: vosk', font=('Comic Sans MS', 16))
-    btn1_setting = Button(home_frame, text = 'replacement spech model', font=('Comic Sans MS', 12), # font=('Comic Sans MS', 12, 'overstrike')/'overstrike'
-                          width=20, height=1, fg='black', bg='darkgoldenrod', activebackground='gray', 
-                          command=open_window_Modelspeech_replacement, border=0, cursor='hand1')
+    # inst = tk.Label(home_frame, text = 'Model speech: vosk', font=('Comic Sans MS', 16))
+    # btn1_setting = Button(home_frame, text = 'replacement spech model', font=('Comic Sans MS', 12), # font=('Comic Sans MS', 12, 'overstrike')/'overstrike'
+    #                       width=20, height=1, fg='black', bg='darkgoldenrod', activebackground='gray', 
+    #                       command=open_window_Modelspeech_replacement, border=0, cursor='hand1')
     
-    inst2 = tk.Label(home_frame, text = ' Model volume: small', font=('Comic Sans MS', 16))
+    inst2 = tk.Label(home_frame, text = ' Model volume', font=('Comic Sans MS', 16))
     btn2_setting = Button(home_frame, text = 'replacement volume', font=('Comic Sans MS', 12),
                           width=20, height=1, fg='black', bg='darkgoldenrod', activebackground='gray', 
                           command=open_window_Modelvolume_replacemen, border=0, cursor='hand1')
     
-    inst3 = tk.Label(home_frame, text = ' Model vois: baya', font=('Comic Sans MS', 16))
+    inst3 = tk.Label(home_frame, text = ' Model vois', font=('Comic Sans MS', 16))
     btn3_setting = Button(home_frame, text = 'replacement vois', font=('Comic Sans MS', 12),
                           width=20, height=1, fg='black', bg='darkgoldenrod', activebackground='gray', 
                           command=open_window_Modelvois_replacement, border=0, cursor='hand1')
     
     setting.pack()
-    inst.pack()
-    btn1_setting.pack()
+    # inst.pack()
+    # btn1_setting.pack()
     inst2.pack()
     btn2_setting.pack()
     inst3.pack()
