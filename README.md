@@ -93,11 +93,12 @@ The following features will be added in the future:
 ![pythonw_LwsyvNNvEy](https://github.com/PandaBTBs/Stella-2.0-program-/assets/118614536/ff5e7d8e-769d-4bbb-a228-5bed8ec4cf19)
 ![pythonw_97m04hhFzv](https://github.com/PandaBTBs/Stella-2.0-program-/assets/118614536/99e3dae2-7f8e-451d-b00a-c33c56920337)
 
-![xzi6rvhppI](https://github.com/PandaBTBs/Stella-2.0-program-/assets/118614536/018410b8-e686-4605-baf3-5175836cb59c)
+![tfLaMf6Faq](https://github.com/PandaBTBs/Stella-2.0-program-/assets/118614536/d1068b5e-00dc-476e-b77e-6349d5d2c10a)
+
 
 ![pythonw_DSQEtYdIN6](https://github.com/PandaBTBs/Stella-2.0-program-/assets/118614536/31a40fc4-ca13-4842-9939-70edc20349b7)
 ![933lYpcMdB](https://github.com/PandaBTBs/Stella-2.0-program-/assets/118614536/b4ea50fa-7241-4332-8dcf-290937f1c687)
-![pythonw_gpTXf4G5Eu](https://github.com/PandaBTBs/Stella-2.0-program-/assets/118614536/ed135928-3aef-4668-901d-1b5180efb48c)
+
 
 ![pythonw_gtG7av0RqH](https://github.com/PandaBTBs/Stella-2.0-program-/assets/118614536/0a4814d0-2cec-4a1c-9b06-25093377887c)
 
