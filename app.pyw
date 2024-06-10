@@ -7,25 +7,6 @@ from tkinter import messagebox
 from PIL import Image, ImageTk
 import psutil
 
-# from winreg import *
-
-# jff mic
-# REG_PATH = r"SOFTWARE\Microsoft\Windows\CurrentVersion\MMDevices\Audio\Capture\{caadea3a-3ab4-4f9e-b558-0a784faf03b6}"
-
-# def mic_On(name, value):
-#     try:
-#         CreateKey(HKEY_LOCAL_MACHINE, REG_PATH)
-#         registry_key = OpenKey(HKEY_CURRENT_USER, REG_PATH, 0,
-#                                        KEY_WRITE)
-#         SetValueEx(registry_key, name, 0, REG_SZ, value)
-#         CloseKey(registry_key)
-#         return True
-#     except WindowsError:
-#         print("error")
-#         return False
-
-# mic_On("DeviceState","0x00000001")
-
 root=tk.Tk()
 
 img=PhotoImage(file='J:\\Stella\\stellaPR\\python_web_pr\\alisa.png')
@@ -72,8 +53,8 @@ def rep_speech_model_xenia():
 
 
 
-def Addrun():
-    return os.system('python run.py')
+def Addrun(): return subprocess.call('python run.py', shell = True) # работае даже без консоли
+    # return os.system('python run.py')
 
 def Addexit():
     for proc in psutil.process_iter():
