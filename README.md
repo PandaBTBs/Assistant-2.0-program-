@@ -84,8 +84,8 @@ start
 The following features will be added in the future:
 ```
 1. Mic ×
-2. replacement spech model ✔ (manual input only)
-3. replacement volume ✔ (manual input only)
+2. replacement spech model ✔ 
+3. replacement volume ✔ 
 4. Ability to communicate with the llama neural network ✔ (only only in limited mode: llama-70b)
 ```
 
