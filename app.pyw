@@ -152,9 +152,9 @@ def home_page():
                     height = '1', fg = 'black', bg  = 'darkgoldenrod', activebackground='gray', border=0, 
                     cursor='hand1')
     
-    mic = tk.Button(home_frame, text='ON', font = ('Comic Sans MS', 12),
-                    width = '180', height = '40', fg = 'black', bg  = 'darkgoldenrod', activebackground='gray', 
-                    image=img_mic_on, compound=RIGHT, border=0, cursor='hand1') #command= Addrun,
+    # mic = tk.Button(home_frame, text='ON', font = ('Comic Sans MS', 12),
+    #                 width = '180', height = '40', fg = 'black', bg  = 'darkgoldenrod', activebackground='gray', 
+    #                 image=img_mic_on, compound=RIGHT, border=0, cursor='hand1') #command= Addrun,
     
     #root/window
     btn2 = tk.Button(home_frame, text='OUTPUT', font = ('Comic Sans MS', 12), command= Addexit,
@@ -166,7 +166,7 @@ def home_page():
     com.pack(pady=5)
     cop.pack(pady=5)
     btn.pack(pady=5)
-    mic.pack(pady=5)
+    # mic.pack(pady=5)
     btn2.pack(pady=5)
     
     home_frame.pack(pady=(10))
