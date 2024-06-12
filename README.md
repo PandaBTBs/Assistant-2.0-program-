@@ -62,6 +62,11 @@ pip install pyinstall
 pip install vosk + model(smаll, big)
 ```
 
+```
+pip install replicate
+```
+
+
 
 ## RUN program
 Open `run.bat`.
