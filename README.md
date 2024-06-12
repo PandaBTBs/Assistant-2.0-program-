@@ -66,7 +66,13 @@ pip install vosk + model(smаll, big)
 pip install replicate
 ```
 
+```
+pip install pillow
+```
 
+```
+pip install psutil
+```
 
 ## RUN program
 Open `run.bat`.
