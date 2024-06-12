@@ -10,6 +10,7 @@ import replicate
 
 
 
+
 VE_NAME = ('ассистент')
 
 VA_ALIAS = ('ассистент', 'робот', 'стелла', 'стела', 'стала', 'стоило')
@@ -44,6 +45,8 @@ VA_CMD_LIST = {
         "history": ('истории','навык'),
         
         "chat_llama": ('Ответ', 'Вопрос'),
+        
+        "work_zone": ('рабочая зона', 'зона'),
         
         "exit": ( 'заврешение работы', 'конец работы', 'закрыть')
         
@@ -170,6 +173,13 @@ def execute_cmd(cmd: str):
         text = "выключаюсь"
         tts.va_speak(text)
         quit()
+        
+    elif cmd == 'work_zone':
+        tts.va_speak('Открываю рабочую зону')
+        
+        webbrowser.open("https://www.google.ru/?hl=ru")
+        os.startfile(r'J:\Microsoft VS Code\Code.exe')
+        os.startfile(r'D:/steamT1/steamapps/common/ShareX/ShareX_Launcher')
     
     
     elif cmd == 'chat_llama':
@@ -185,7 +195,7 @@ def execute_cmd(cmd: str):
                 "prompt": input_log
             },
             ):
-            print(str(event), end="")
+            print('AI', str(event), end="")
             # tts.va_speak(str(event))
     
     elif cmd == 'history':
@@ -197,7 +207,7 @@ def execute_cmd(cmd: str):
         
         if uy == 'hs1':
             print('---------------------history-1---------------------')
-            text = 'Хорошо, давайте, придумаем, занимательную историю'
+            text = 'Хорошо, давайте, придумаем занимательную историю,'
             text+= 'Объяснительная, об, опоздании'
             tts.va_speak(text)
         
@@ -205,7 +215,7 @@ def execute_cmd(cmd: str):
             tts.va_speak('Для начала, скажи, куда мы опоздали')
             locally_1 = str(input())
         
-            tts.va_speak('теперь, назови животное, муж+ского рода')
+            tts.va_speak('теперь, назови животное, мужского рода')
             genus_m = str(input())
         
             tts.va_speak('теперь, назови, животное, женского рода')
@@ -236,7 +246,7 @@ def execute_cmd(cmd: str):
             if intHS1 == 'hs2':
                 print('---------------------history-2---------------------')
                 text = 'Отлично,'
-                text+= 'Текст, про, ци+рк'
+                text+= 'Текст, про цирк'
                 tts.va_speak(text)
             
                 tts.va_speak('Для начала, назови, знаменитого мужчину')    
@@ -272,9 +282,9 @@ def execute_cmd(cmd: str):
         
             if intHS1 == 'hs3':
                 print('---------------------history-3---------------------')
-                text = 'Извини,'
-                text+= ',Но она недоступна,'
-                text+='введи, занчение ноль,-0-, или любое, другое'
+                text = 'Извини'
+                text+= 'но она недоступна,'
+                text+='введи занчение ноль,-0-, или любое другое'
                 tts.va_speak(text)
                 print(text)
                 pass2=str(input())
@@ -295,7 +305,7 @@ def execute_cmd(cmd: str):
         if uy == 'hs2':
             print('---------------------history-2---------------------')
             text = 'Отлично,'
-            text+= 'Текст, про, ци+рк'
+            text+= 'Текст, про, цирк'
             tts.va_speak(text)
             
             tts.va_speak('Для начала, назови, знаменитого мужчину')    
@@ -374,9 +384,9 @@ def execute_cmd(cmd: str):
             
             if intHS3  == 'hs3':
                 print('---------------------history-3---------------------')
-                text = 'Извини,'
-                text+= ',Но она недоступна,'
-                text+='введи, занчение ноль,-0-, или любое, другое'
+                text = 'Извини'
+                text+= 'но она недоступна,'
+                text+='введи занчение ноль,-0-, или любое другое'
                 tts.va_speak(text)
                 print(text)
                 pass2=str(input())
@@ -387,9 +397,9 @@ def execute_cmd(cmd: str):
              
             if intHS2 == 'hs3':
                 print('---------------------history-3---------------------')
-                text = 'Извини,'
-                text+= ',Но она недоступна,'
-                text+='введи, занчение ноль,-0-, или любое, другое'
+                text = 'Извини'
+                text+= 'но она недоступна,'
+                text+='введи занчение ноль,-0-, или любое другое'
                 tts.va_speak(text)
                 print(text)
                 pass2=str(input())
@@ -409,9 +419,9 @@ def execute_cmd(cmd: str):
 
         if uy  == 'hs3':
             print('---------------------history-3---------------------')
-            text = 'Извини,'
-            text+= ',Но она недоступна,'
-            text+='введи, занчение ноль,-0-, или любое, другое'
+            text = 'Извини'
+            text+= 'но она недоступна,'
+            text+='введи занчение ноль,-0-, или любое другое'
             tts.va_speak(text)
             print(text)
             pass2=str(input())
