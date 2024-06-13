@@ -81,7 +81,7 @@ The following features will be added in the future:
 4. Ability to communicate with the llama neural network ✔ (only only in limited mode: llama-70b)
 ```
 
-![explorer_IfhBMuvKlL](https://github.com/PandaBTBs/Assistant-2.0-program-/assets/118614536/2afb0716-6d9f-4854-b762-96242f2d5473)
+![pythonw_nht4jafCJE](https://github.com/PandaBTBs/Assistant-2.0-program-/assets/118614536/a37237fb-b762-44d0-be4b-a56af091eebf)
 
 
 ![pythonw_97m04hhFzv](https://github.com/PandaBTBs/Stella-2.0-program-/assets/118614536/99e3dae2-7f8e-451d-b00a-c33c56920337)
