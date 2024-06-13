@@ -83,10 +83,9 @@ Open `run.bat`.
 
 ## Instructions for program 
 Place the program file in the assistant folder
-1.  Replace links with access to `img`(line 12, 21, 22, 35, 55, 75).
-2. Install pip file `PIL`.
-3. Install the assistant in the same folder as the program, click start and write in cmd `python run.py`.
-4. To finish, click `output` on the home page.
+1. Install pip file `PIL`.
+2. Install the assistant in the same folder as the program, click start and write in cmd `python run.py`.
+3. To finish, click `output` on the home page.
 ## Note
 __Functions that work__
 ```
