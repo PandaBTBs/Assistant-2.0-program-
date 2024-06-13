@@ -9,7 +9,7 @@ import psutil
 
 root=tk.Tk()
 
-img=PhotoImage(file='J:\\Stella\\stellaPR\\python_web_pr\\alisa.png')
+img=PhotoImage(file='alisa.png')
 root.iconphoto(False,img)
 root.resizable(width=False, height=False)
 
@@ -17,9 +17,6 @@ root.title('Ассистент Stella')
 root.geometry('600x400')
 
 root['bg'] = 'black'
-
-img_mic_on=ImageTk.PhotoImage(file='J:\\Stella\\stellaPR\\python_web_pr\\button_img.ico\\mic-on.png')
-img_mic_off=ImageTk.PhotoImage(file='J:\\Stella\\stellaPR\\python_web_pr\\button_img.ico\\mic-off.png')
 
 #vosk model
 
@@ -53,9 +50,8 @@ def rep_speech_model_xenia():
 
 
 
-def Addrun(): return os.system("start cmd")
-    # subprocess.call('python run.py', shell = True) # работае даже без консоли
-    # return os.system('python run.py')
+def Addrun():
+    return os.system("start cmd")
 
 def Addexit():
     for proc in psutil.process_iter():
@@ -65,7 +61,7 @@ def Addexit():
 # speech
 def open_window_Modelvois_replacement():
     window_Modelvois_replacement = Toplevel(root)
-    img=PhotoImage(file='J:\\Stella\\stellaPR\\python_web_pr\\alisa.png')
+    img=PhotoImage(file='alisa.png')
     window_Modelvois_replacement.iconphoto(False,img)
     window_Modelvois_replacement.resizable(width=False, height=False)
     window_Modelvois_replacement.title('Modelvois')
@@ -97,30 +93,9 @@ def open_window_Modelvois_replacement():
     btn_xenia.pack(pady=5)
     Modelvois_replacement.pack(pady=5)
 
-
-# def open_window_Modelspeech_replacement():
-#     window_Modelspeech_replacement = Toplevel(root)
-#     img=PhotoImage(file='J:\\Stella\\stellaPR\\python_web_pr\\alisa.png')
-#     window_Modelspeech_replacement.iconphoto(False,img)
-#     window_Modelspeech_replacement.resizable(width=False, height=False)
-#     window_Modelspeech_replacement.title('Modelspeek')
-#     window_Modelspeech_replacement.resizable(0, 0)
-#     window_Modelspeech= Canvas(window_Modelspeech_replacement, width=300, height=10, bg='#65da88', highlightthickness=0)
-    
-#     btn_vosk = tk.Button(window_Modelspeech_replacement, text ='Vosk model', font=('Comic Sans MS', 12), width = '10', 
-#                     height = '1', fg = 'black', bg  = 'darkgoldenrod', activebackground='gray', border=0, 
-#                     cursor='hand1')
-#     btn_alt = tk.Button(window_Modelspeech_replacement, text ='Alt model', font=('Comic Sans MS', 12), width = '10', 
-#                     height = '1', fg = 'black', bg  = 'darkgoldenrod', activebackground='gray', border=0, 
-#                     cursor='hand1')
-    
-#     window_Modelspeech.pack(pady=3)
-#     btn_vosk.pack(pady=5)
-#     btn_alt.pack(pady=5)
-
 def open_window_Modelvolume_replacemen():
     window_Modelvolume_replacemen = Toplevel(root)
-    img=PhotoImage(file='J:\\Stella\\stellaPR\\python_web_pr\\alisa.png')
+    img=PhotoImage(file='alisa.png')
     window_Modelvolume_replacemen.iconphoto(False,img)
     window_Modelvolume_replacemen.resizable(width=False, height=False)
     window_Modelvolume_replacemen.title('Modelvolume')
@@ -152,10 +127,6 @@ def home_page():
                     height = '1', fg = 'black', bg  = 'darkgoldenrod', activebackground='gray', border=0, 
                     cursor='hand1')
     
-    # mic = tk.Button(home_frame, text='ON', font = ('Comic Sans MS', 12),
-    #                 width = '180', height = '40', fg = 'black', bg  = 'darkgoldenrod', activebackground='gray', 
-    #                 image=img_mic_on, compound=RIGHT, border=0, cursor='hand1') #command= Addrun,
-    
     #root/window
     btn2 = tk.Button(home_frame, text='OUTPUT', font = ('Comic Sans MS', 12), command= Addexit,
                      width = '18', height = '1', fg = 'black', bg  = 'darkgoldenrod', activebackground='gray', border=0, cursor='hand1')
@@ -166,7 +137,6 @@ def home_page():
     com.pack(pady=5)
     cop.pack(pady=5)
     btn.pack(pady=5)
-    # mic.pack(pady=5)
     btn2.pack(pady=5)
     
     home_frame.pack(pady=(10))
