@@ -93,6 +93,27 @@ def open_window_Modelvois_replacement():
     btn_xenia.pack(pady=5)
     Modelvois_replacement.pack(pady=5)
 
+
+# def open_window_Modelspeech_replacement():
+#     window_Modelspeech_replacement = Toplevel(root)
+#     img=PhotoImage(file='J:\\Stella\\stellaPR\\python_web_pr\\alisa.png')
+#     window_Modelspeech_replacement.iconphoto(False,img)
+#     window_Modelspeech_replacement.resizable(width=False, height=False)
+#     window_Modelspeech_replacement.title('Modelspeek')
+#     window_Modelspeech_replacement.resizable(0, 0)
+#     window_Modelspeech= Canvas(window_Modelspeech_replacement, width=300, height=10, bg='#65da88', highlightthickness=0)
+    
+#     btn_vosk = tk.Button(window_Modelspeech_replacement, text ='Vosk model', font=('Comic Sans MS', 12), width = '10', 
+#                     height = '1', fg = 'black', bg  = 'darkgoldenrod', activebackground='gray', border=0, 
+#                     cursor='hand1')
+#     btn_alt = tk.Button(window_Modelspeech_replacement, text ='Alt model', font=('Comic Sans MS', 12), width = '10', 
+#                     height = '1', fg = 'black', bg  = 'darkgoldenrod', activebackground='gray', border=0, 
+#                     cursor='hand1')
+    
+#     window_Modelspeech.pack(pady=3)
+#     btn_vosk.pack(pady=5)
+#     btn_alt.pack(pady=5)
+
 def open_window_Modelvolume_replacemen():
     window_Modelvolume_replacemen = Toplevel(root)
     img=PhotoImage(file='alisa.png')
@@ -119,13 +140,17 @@ def home_page():
     
     home_page = tk.Label(home_frame, text = ('_______________HOME_______________\n'), font = ('Arial', 16), fg = 'black')
     
-    com = tk.Label(home_frame, text = '{VA_ALIAS} \n ассистент, робот, стелла, стела \n\n {VA_TBR} \n ответь, переведи, скажи, говори, сколько вермя',
+    com = tk.Label(home_frame, text = '{alt_name} \n ассистент, робот, стелла, стела \n\n {short_programs} \n ответь, переведи, скажи, говори, сколько вермя',
                    font = ('Bold', 14))
     cop = tk.Label(home_frame, text = 'python run.py',
                    font = ('Bold', 14))
     btn = tk.Button(home_frame, text='START', font = ('Comic Sans MS', 12), command= Addrun, width = '18', 
                     height = '1', fg = 'black', bg  = 'darkgoldenrod', activebackground='gray', border=0, 
                     cursor='hand1')
+    
+    # mic = tk.Button(home_frame, text='ON', font = ('Comic Sans MS', 12),
+    #                 width = '180', height = '40', fg = 'black', bg  = 'darkgoldenrod', activebackground='gray', 
+    #                 image=img_mic_on, compound=RIGHT, border=0, cursor='hand1') #command= Addrun,
     
     #root/window
     btn2 = tk.Button(home_frame, text='OUTPUT', font = ('Comic Sans MS', 12), command= Addexit,
@@ -137,6 +162,7 @@ def home_page():
     com.pack(pady=5)
     cop.pack(pady=5)
     btn.pack(pady=5)
+    # mic.pack(pady=5)
     btn2.pack(pady=5)
     
     home_frame.pack(pady=(10))
