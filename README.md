@@ -12,22 +12,7 @@ https://github.com/snakers4/silero-mo...
 https://github.com/alphacep/vosk-api
 ```
 
-3. Sounddevice (or pip install sounddevice/pyaudio)
-```
-https://python-sounddevice.readthedoc...
-```
-
-4. Numpay
-```
-https://numpy.org/
-```
-
-5. Fuzzywuzzy
-```
-https://pypi.org/project/fuzzywuzzy/
-```
-
-6. Num2t4ru, numbers
+3. Num2t4ru, numbers
 ```
 https://github.com/Yuego/num2t4ru
 ```
