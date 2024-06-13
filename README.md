@@ -75,7 +75,7 @@ pip install psutil
 ```
 
 ## RUN program
-Open `run.bat`.
+Open `run.bat` or `python run.py`.
 
 ## instructions
 1. For the commands to work, you must say the following: `{VA_ALIAS}_{VA_CMD_LIST}`. In place of the programs in `os.startfile()`, insert your path to the program (note, only exe files)
