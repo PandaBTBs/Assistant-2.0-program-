@@ -140,7 +140,7 @@ def home_page():
     
     home_page = tk.Label(home_frame, text = ('_______________HOME_______________\n'), font = ('Arial', 16), fg = 'black')
     
-    com = tk.Label(home_frame, text = '{alt_name} \n ассистент, робот, стелла, стела \n\n {short_programs} \n ответь, переведи, скажи, говори, сколько вермя',
+    com = tk.Label(home_frame, text = '{alt_name} \n ассистент, робот, стелла \n\n {short_programs} \n ответь, переведи, скажи, говори, сколько вермя',
                    font = ('Bold', 14))
     cop = tk.Label(home_frame, text = 'python run.py',
                    font = ('Bold', 14))
