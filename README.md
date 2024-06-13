@@ -78,7 +78,7 @@ pip install psutil
 Open `run.bat` or `python run.py`.
 
 ## instructions
-1. For the commands to work, you must say the following: `{VA_ALIAS}_{VA_CMD_LIST}`. In place of the programs in `os.startfile()`, insert your path to the program (note, only exe files)
+1. For the commands to work, you must say the following: `{alt_name}_{cmd_list}`. In place of the programs in `os.startfile()`, insert your path to the program (note, only exe files)
 2. File
 
 ## Instructions for program 
@@ -100,7 +100,7 @@ The following features will be added in the future:
 ```
 
 
-![pythonw_LwsyvNNvEy](https://github.com/PandaBTBs/Stella-2.0-program-/assets/118614536/ff5e7d8e-769d-4bbb-a228-5bed8ec4cf19)
+
 ![pythonw_97m04hhFzv](https://github.com/PandaBTBs/Stella-2.0-program-/assets/118614536/99e3dae2-7f8e-451d-b00a-c33c56920337)
 
 ![tfLaMf6Faq](https://github.com/PandaBTBs/Stella-2.0-program-/assets/118614536/d1068b5e-00dc-476e-b77e-6349d5d2c10a)
