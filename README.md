@@ -1,4 +1,4 @@
-# Stella-2.0-program-
+# Assistant-2.0-program-
 
 ## Necessary links for assistent:
 
