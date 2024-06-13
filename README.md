@@ -72,10 +72,7 @@ Place the program file in the assistant folder
 2. Install the assistant in the same folder as the program, click start and write in cmd `python run.py`.
 3. To finish, click `output` on the home page.
 ## Note
-__Functions that work__
-```
-start
-```
+
 The following features will be added in the future:
 ```
 1. Mic ×
