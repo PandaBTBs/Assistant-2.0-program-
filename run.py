@@ -802,5 +802,3 @@ def execute_cmd(cmd: str):
                     pass
     
 stt.va_listen(va_respond)
-
-
