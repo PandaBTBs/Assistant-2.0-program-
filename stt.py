@@ -26,16 +26,17 @@ def model_vosk(f_open):
 f = open('vosk.txt', 'r', encoding='utf-8')
 f_open = f.read()
 
+
 if model_vosk(f_open) == 1:
     print('model_vosk finish installed: big')
-    model = vosk.Model("J:\\Stella\\stellaPR\\vosk_model_big_ru_0.10")
+    model = vosk.Model("vosk_model_big_ru_0.10")
 
 elif model_vosk(f_open) == 2:
     print('model_vosk finish installed: small')
-    model = vosk.Model("J:\\Stella\\stellaPR\\vosk_model_small_ru_0.4")
+    model = vosk.Model("vosk_model_small_ru_0.4")
 
 else:
-    model = vosk.Model("J:\\Stella\\stellaPR\\vosk_model_small_ru_0.4")
+    model = vosk.Model("vosk_model_small_ru_0.4")
 
 
 samplerate = 16000
