@@ -185,8 +185,10 @@ def execute_cmd(cmd: str):
     
     elif cmd == 'chat_llama':
 
+        tts.va_speak('Хорошо, можете задать любой вопрос, и я, постараюсь ответить на него.')
+
         fileW_save = open('chat_save.txt', 'a', encoding='utf-8') # print chat
-        print('0-llama_chat-0 \n input your your question:')
+        print('-AI_chat- \n input your your question: \n Для выхода: -выход- / -exit-' )
 
         from openai import OpenAI
 
@@ -198,25 +200,30 @@ def execute_cmd(cmd: str):
         while True_chat == True:
 
             if True_chat == True:
+
                 login = str(input())
-                fileW_save.write(f'Login: {login} \n')
-                completion = client.chat.completions.create(
 
-                model="TheBloke/dolphin-2.2.1-mistral-7B-GGUF",
-                messages=[
-                {"role": "system", "content": "Always answer briefly."},
-                {"role": "user", "content": login} 
-                ],
-                temperature=0.7,
-                )
+                if login == 'выход' or login == 'exit':
+                    break
+                else: 
+                    fileW_save.write(f'Login: {login} \n')
+
+                    completion = client.chat.completions.create(
+                    model="TheBloke/dolphin-2.2.1-mistral-7B-GGUF",
+                    messages=[
+                    {"role": "system", "content": "Always answer briefly."},
+                    {"role": "user", "content": login} 
+                    ],
+                    temperature=0.7,
+                    )
 
 
-            l = str(completion.choices[0].message)
-            fileW_save.write(f'AI: {l} \n')
+                    l = str(completion.choices[0].message)
+                    fileW_save.write(f'AI: {l} \n')
 
-            print(completion.choices[0].message)
+                    print(completion.choices[0].message)
 
-            tts.va_speak(l)
+                    tts.va_speak(l)
         
 
                     
