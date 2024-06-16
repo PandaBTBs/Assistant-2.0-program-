@@ -181,23 +181,42 @@ def execute_cmd(cmd: str):
         os.startfile(r'J:\Microsoft VS Code\Code.exe')
         os.startfile(r'D:/steamT1/steamapps/common/ShareX/ShareX_Launcher')
     
+    # BETA
     
     elif cmd == 'chat_llama':
-        
-        tts.va_speak('Хорошо, давайте начнем общение, можете задать мне любые вопросы.')
+        fileW_save = open('chat_save.txt', 'a', encoding='utf-8') 
         print('0-llama_chat-0 \n input your your question:')
+
+        # Example: reuse your existing OpenAI setup
+        from openai import OpenAI
+
+        # Point to the local server
+        client = OpenAI(base_url="http://localhost:1234/v1", api_key="lm-studio")
+
+        fileW_save = open('chat_save.txt', 'a', encoding='utf-8') 
+        True_chat = True
+        while True_chat == True:
+
+            if True_chat == True:
+                login = str(input())
+                fileW_save.write(f'Login: {login} \n')
+                completion = client.chat.completions.create(
+
+                model="TheBloke/dolphin-2.2.1-mistral-7B-GGUF",
+                messages=[
+                {"role": "system", "content": "Always answer briefly."},
+                {"role": "user", "content": login} 
+                ],
+                temperature=0.7,
+                )
+
+            print(completion.choices[0].message)
+
+            l = completion.choices[0].message
+            fileW_save.write(f'Login: {l} \n')
         
-        
-        input_log = input()
-        for event in replicate.stream(
-            "meta/meta-llama-guard-2-70b",
-            input={
-                "prompt": input_log
-            },
-            ):
-            print('AI', str(event), end="")
-            # tts.va_speak(str(event))
-    
+
+                    
     elif cmd == 'history':
         tts.va_speak('Хорошо, активирован, навык, истории, Какую историю, Вы, хотите выбрать?')
         print('pls input History: hs1, hs2, hs3, hs4')
@@ -798,3 +817,5 @@ def execute_cmd(cmd: str):
                     pass
     
 stt.va_listen(va_respond)
+
+
