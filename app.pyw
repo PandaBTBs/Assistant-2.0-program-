@@ -15,10 +15,8 @@ root.resizable(width=False, height=False)
 
 root.title('Ассистент Stella')
 root.geometry('600x400')
-
 root['bg'] = 'black'
 
-#vosk model
 
 def rep_model_vosk_small():
     f = open('vosk.txt', 'w', encoding='utf-8')
@@ -241,8 +239,8 @@ def cmd_page():
     cmd6.pack()
     
     
-    
     home_frame.pack()
+    
 
 def setting_page():
     
@@ -286,6 +284,30 @@ def log_page():
     log_text.pack()
     
     home_frame.pack(pady=10)
+
+
+
+
+# BETA
+
+def chat_page():
+    
+    home_frame = tk.Frame(main_frame)
+    
+    enter = Entry(home_frame)
+    
+    text = open('chat_save.txt', encoding='utf-8').readlines()
+    text = ''.join(text)
+    textline = Text(home_frame)
+    #add text
+    textline.insert(1.0, text)
+    textline.pack()
+
+    enter.pack()
+    
+    home_frame.pack(pady=10)
+
+
 
 
 
@@ -350,6 +372,17 @@ log_btn.place(x = 10, y = 200)
 
 log_indicate = tk.Label(options_frame, text='', bg='black')
 log_indicate.place(x=3, y=200, width=3, height=30)
+
+# chat_page
+
+CHAT_btn =tk.Button(options_frame, text='CHAT', font=('Bold', 12), 
+                    fg='white', bd=0, bg='black',
+                    command=lambda: indicate(CHAT_indicate, chat_page))
+CHAT_btn.place(x = 10, y = 200)
+
+CHAT_indicate = tk.Label(options_frame, text='', bg='black')
+CHAT_indicate.place(x=3, y=200, width=3, height=30)
+
 
 options_frame.pack(side=tk.LEFT) 
 options_frame.pack_propagate(False)
