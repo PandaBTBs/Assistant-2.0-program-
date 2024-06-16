@@ -59,6 +59,10 @@ pip install pillow
 pip install psutil
 ```
 
+```
+pip install openai
+```
+
 ## RUN program
 Open `run.bat` or `python run.py`.
 
@@ -78,7 +82,7 @@ The following features will be added in the future:
 1. Mic ×
 2. replacement spech model ✔ 
 3. replacement volume ✔ 
-4. Ability to communicate with the llama neural network ✔ (only only in limited mode: llama-70b)
+4. Ability to communicate with the llama neural network ✔ (7B)
 ```
 
 ![pythonw_nht4jafCJE](https://github.com/PandaBTBs/Assistant-2.0-program-/assets/118614536/a37237fb-b762-44d0-be4b-a56af091eebf)
