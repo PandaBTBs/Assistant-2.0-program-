@@ -72,17 +72,23 @@ Open `run.bat` or `python run.py`.
 
 ## instructions
 1. For the commands to work, you must say the following: `{alt_name}_{cmd_list}`. In place of the programs in `os.startfile()`, insert your path to the program (note, only exe files)
-2. File
+2. To use the neural network in the assistant, you will need the following instructions:
+```
+1. Install lm studio.
+2. Install The Blue dolphin-2.2.1-mistral-7b.Q5_K_M.gif (https://huggingface.co/TheBloke/dolphin-2.2.1-mistral-7B-GGUF/resolve/main/dolphin-2.2.1-mistral-7b.Q5_K_M.gguf)
+3. Upload the model.
+4. In the local server section, start the server.
+```
 
 ## Instructions for program 
 Place the program file in the assistant folder
 1. Install pip file `PIL`.
 2. Install the assistant in the same folder as the program, click start and write in cmd `python run.py`.
 3. To finish, click `output` on the home page.
-## Note
 
+## Note
 The following features will be added in the future:
-```
+
 1. Mic ×
 2. replacement spech model ✔ 
 3. replacement volume ✔ 
