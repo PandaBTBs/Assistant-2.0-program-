@@ -13,7 +13,7 @@ img=PhotoImage(file='alisa.png')
 root.iconphoto(False,img)
 root.resizable(width=False, height=False)
 
-root.title('Ассистент Stella')
+root.title('Ассистент Alisa')
 root.geometry('600x400')
 root['bg'] = 'black'
 
