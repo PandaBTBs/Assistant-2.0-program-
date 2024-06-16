@@ -184,16 +184,16 @@ def execute_cmd(cmd: str):
     # BETA
     
     elif cmd == 'chat_llama':
-        fileW_save = open('chat_save.txt', 'a', encoding='utf-8') 
+
+        fileW_save = open('chat_save.txt', 'a', encoding='utf-8') # print chat
         print('0-llama_chat-0 \n input your your question:')
 
-        # Example: reuse your existing OpenAI setup
         from openai import OpenAI
 
         # Point to the local server
         client = OpenAI(base_url="http://localhost:1234/v1", api_key="lm-studio")
 
-        fileW_save = open('chat_save.txt', 'a', encoding='utf-8') 
+        fileW_save = open('chat_save.txt', 'a', encoding='utf-8') # print chat
         True_chat = True
         while True_chat == True:
 
@@ -210,10 +210,13 @@ def execute_cmd(cmd: str):
                 temperature=0.7,
                 )
 
+
+            l = str(completion.choices[0].message)
+            fileW_save.write(f'AI: {l} \n')
+
             print(completion.choices[0].message)
 
-            l = completion.choices[0].message
-            fileW_save.write(f'Login: {l} \n')
+            tts.va_speak(l)
         
 
                     
