@@ -16,6 +16,10 @@ https://github.com/alphacep/vosk-api
 ```
 https://github.com/Yuego/num2t4ru
 ```
+4. LLM studio
+```
+https://lmstudio.ai/
+```
 
 ## PIP INSTALL (or programs)
 
