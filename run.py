@@ -189,7 +189,6 @@ def execute_cmd(cmd: str):
         tts.va_speak('Хорошо, можете задать любой вопрос, и я, постараюсь ответить на него.')
         import json, pyaudio
         from vosk import Model, KaldiRecognizer
-        import tts 
 
         model = Model("vosk_model_small_ru_0.4")
         rec = KaldiRecognizer(model, 16000)
