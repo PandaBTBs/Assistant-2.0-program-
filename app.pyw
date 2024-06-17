@@ -17,6 +17,7 @@ root.title('Ассистент Alisa')
 root.geometry('600x400')
 root['bg'] = 'black'
 
+#vosk model
 
 def rep_model_vosk_small():
     f = open('vosk.txt', 'w', encoding='utf-8')
@@ -50,6 +51,12 @@ def rep_speech_model_xenia():
 
 def Addrun():
     return os.system("start cmd")
+
+    
+    # return subprocess.call('python run.py', shell = True) # работае даже без консоли
+    # return os.system('python run.py') # работает с консолью
+    # return os.system('python run.py')
+    # return subprocess('')
 
 def Addexit():
     for proc in psutil.process_iter():
@@ -318,6 +325,7 @@ def hide_indicators():
     cmd_indicate.config(bg='black')
     setting_indicate.config(bg='black')
     log_indicate.config(bg='black')
+    CHAT_indicate.config(bg='black')
 
 def delete_pages():
     for frame in main_frame.winfo_children():
