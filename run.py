@@ -186,45 +186,91 @@ def execute_cmd(cmd: str):
     # BETA
     
     elif cmd == 'chat_llama':
-
         tts.va_speak('Хорошо, можете задать любой вопрос, и я, постараюсь ответить на него.')
+        import json, pyaudio
+        from vosk import Model, KaldiRecognizer
+        import tts 
 
-        fileW_save = open('chat_save.txt', 'a', encoding='utf-8') # print chat
-        print('-AI_chat- \n input your your question: \n Для выхода: -выход- / -exit-' )
+        model = Model("vosk_model_small_ru_0.4")
+        rec = KaldiRecognizer(model, 16000)
+        p = pyaudio.PyAudio()
+        stream = p.open(format=pyaudio.paInt16, channels=1, rate=16000, input=True,
+                frames_per_buffer=8000)
 
-        from openai import OpenAI
+        stream.start_stream()
 
-        # Point to the local server
-        client = OpenAI(base_url="http://localhost:1234/v1", api_key="lm-studio")
-        True_chat = True
-        while True_chat == True:
+        def lisen():
+            while True:
+                data = stream.read(4000, exception_on_overflow=False)
+                if (rec.AcceptWaveform(data)) and (len(data) > 0):
+                    answer = json.loads(rec.Result())
+                    if answer['text']:
+                        yield answer['text']
+                
+        for text in lisen():
+            print(text)
 
-            if True_chat == True:
+            # Point to the local server
+            from openai import OpenAI
+            client = OpenAI(base_url="http://localhost:1234/v1", api_key="lm-studio")
+            True_chat = True
+            while True_chat == True:
 
-                login = str(input())
-
-
-                if login == 'выход' or login == 'exit':
-                    break
-                else: 
-                    fileW_save.write(f'Login: {login} \n')
-
+                if True_chat == True:
+            
                     completion = client.chat.completions.create(
-                    model="TheBloke/dolphin-2.2.1-mistral-7B-GGUF",
-                    messages=[
-                    {"role": "system", "content": "Always answer briefly."},
-                    {"role": "user", "content": login} 
-                    ],
-                    temperature=0.7,
-                    )
+                model="TheBloke/dolphin-2.2.1-mistral-7B-GGUF",
+                messages=[
+                {"role": "system", "content": "Always answer briefly."},
+                {"role": "user", "content": text} 
+                ],
+                temperature=0.5,
+                )
 
 
                     l = str(completion.choices[0].message)
-                    fileW_save.write(f'AI: {l} \n')
-
                     print(completion.choices[0].message)
-
                     tts.va_speak(l)
+                    break
+
+        # tts.va_speak('Хорошо, можете задать любой вопрос, и я, постараюсь ответить на него.')
+
+        # fileW_save = open('chat_save.txt', 'a', encoding='utf-8') # print chat
+        # print('-AI_chat- \n input your your question: \n Для выхода: -выход- / -exit-' )
+
+        # from openai import OpenAI
+
+        # # Point to the local server
+        # client = OpenAI(base_url="http://localhost:1234/v1", api_key="lm-studio")
+        # True_chat = True
+        # while True_chat == True:
+
+        #     if True_chat == True:
+
+        #         login = str(input())
+
+
+        #         if login == 'выход' or login == 'exit':
+        #             break
+        #         else: 
+        #             fileW_save.write(f'Login: {login} \n')
+
+        #             completion = client.chat.completions.create(
+        #             model="TheBloke/dolphin-2.2.1-mistral-7B-GGUF",
+        #             messages=[
+        #             {"role": "system", "content": "Always answer briefly."},
+        #             {"role": "user", "content": login} 
+        #             ],
+        #             temperature=0.7,
+        #             )
+
+
+        #             l = str(completion.choices[0].message)
+        #             fileW_save.write(f'AI: {l} \n')
+
+        #             print(completion.choices[0].message)
+
+        #             tts.va_speak(l)
 
                  
     elif cmd == 'history':
