@@ -213,7 +213,7 @@ def execute_cmd(cmd: str):
         print('\n Задайте вопрос...')
         
         for text in lisen():
-            out_blue(f'Ваш вопрос: {text}')
+            out_blue(f'user: {text}')
 
             # Point to the local server
             from openai import OpenAI
@@ -232,7 +232,6 @@ def execute_cmd(cmd: str):
                         )
 
                     l = str(completion.choices[0].message)
-                    # print(completion.choices[0].message)
                     out_red(f'AI: {l}')
                     tts.va_speak(l)
                     break
