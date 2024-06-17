@@ -181,6 +181,8 @@ def execute_cmd(cmd: str):
         os.startfile(r'J:\Microsoft VS Code\Code.exe')
         os.startfile(r'D:/steamT1/steamapps/common/ShareX/ShareX_Launcher')
     
+    
+    
     # BETA
     
     elif cmd == 'chat_llama':
@@ -194,14 +196,13 @@ def execute_cmd(cmd: str):
 
         # Point to the local server
         client = OpenAI(base_url="http://localhost:1234/v1", api_key="lm-studio")
-
-        fileW_save = open('chat_save.txt', 'a', encoding='utf-8') # print chat
         True_chat = True
         while True_chat == True:
 
             if True_chat == True:
 
                 login = str(input())
+
 
                 if login == 'выход' or login == 'exit':
                     break
@@ -224,9 +225,8 @@ def execute_cmd(cmd: str):
                     print(completion.choices[0].message)
 
                     tts.va_speak(l)
-        
 
-                    
+                 
     elif cmd == 'history':
         tts.va_speak('Хорошо, активирован, навык, истории, Какую историю, Вы, хотите выбрать?')
         print('pls input History: hs1, hs2, hs3, hs4')
@@ -267,7 +267,7 @@ def execute_cmd(cmd: str):
             и потерял сознание, очнулся я в {locally_2}, и сказал, отвезите меня {locally_1},\
             мне очень надо, но эти мои {animals}, почему то, отвезли меня {locally_3},\
             и от туда, я шёл пешком, пока меня не подвёз пьяный {input_us}. Вот, почему я опоздал\
-            на {locally_1}. Мне кажется, получилось прикольно. Хотите, соченить еще?')
+             {locally_1}. Мне кажется, получилось прикольно. Хотите, соченить еще?')
             
             print('pls input number_history') 
             intHS1 = str(input())
@@ -455,7 +455,7 @@ def execute_cmd(cmd: str):
                 и потерял сознание, очнулся я в {locally_2}, и сказал, отвезите меня {locally_1},\
                 мне очень надо, но эти мои {animals}, почему то, отвезли меня {locally_3},\
                 и от туда, я шёл пешком, пока меня не подвёз пьяный {input_us}. Вот, почему я опоздал\
-                на {locally_1}. Мне кажется, получилось прикольно. Хотите, соченить еще?')
+                {locally_1}. Мне кажется, получилось прикольно. Хотите, соченить еще?')
             
                 print('pls input number_history') 
             
@@ -746,8 +746,8 @@ def execute_cmd(cmd: str):
                 и потерял сознание, очнулся я в {locally_2}, и сказал, отвезите меня {locally_1},\
                 мне очень надо, но эти мои {animals}, почему то, отвезли меня {locally_3},\
                 и от туда, я шёл пешком, пока меня не подвёз пьяный {input_us}. Вот, почему я опоздал\
-                на {locally_1}. Мне кажется, получилось прикольно. Хотите, соченить еще?')
-                
+                {locally_1}. Мне кажется, получилось прикольно. Хотите, соченить еще?')
+            
                 print('pls input number_history') 
                 intHS11 = str(input())
             
