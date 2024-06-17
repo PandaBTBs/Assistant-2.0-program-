@@ -8,7 +8,10 @@ import webbrowser
 import random
 import replicate
 
-
+def out_blue(text):
+    print("\033[36m {}" .format(text))
+def out_red(text):
+    print("\033[31m {}" .format(text))
 
 
 name = ('ассистент')
@@ -186,6 +189,7 @@ def execute_cmd(cmd: str):
     # BETA
     
     elif cmd == 'chat_llama':
+        # print('-AI_chat- \n input your your question: \n Для выхода: -выход- / -exit-' )
         tts.va_speak('Хорошо, можете задать любой вопрос, и я, постараюсь ответить на него.')
         import json, pyaudio
         from vosk import Model, KaldiRecognizer
@@ -205,9 +209,11 @@ def execute_cmd(cmd: str):
                     answer = json.loads(rec.Result())
                     if answer['text']:
                         yield answer['text']
-                
+                        
+        print('\n Задайте вопрос...')
+        
         for text in lisen():
-            print(text)
+            out_blue(f'Ваш вопрос: {text}')
 
             # Point to the local server
             from openai import OpenAI
@@ -216,19 +222,18 @@ def execute_cmd(cmd: str):
             while True_chat == True:
 
                 if True_chat == True:
-            
                     completion = client.chat.completions.create(
-                model="TheBloke/dolphin-2.2.1-mistral-7B-GGUF",
-                messages=[
-                {"role": "system", "content": "Always answer briefly."},
-                {"role": "user", "content": text} 
-                ],
-                temperature=0.5,
-                )
-
+                    model="TheBloke/dolphin-2.2.1-mistral-7B-GGUF",
+                    messages=[
+                        {"role": "system", "content": "Always answer briefly."},
+                        {"role": "user", "content": text} 
+                        ],
+                        temperature=0.5,
+                        )
 
                     l = str(completion.choices[0].message)
-                    print(completion.choices[0].message)
+                    # print(completion.choices[0].message)
+                    out_red(f'AI: {l}')
                     tts.va_speak(l)
                     break
 
