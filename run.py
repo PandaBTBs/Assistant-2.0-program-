@@ -228,11 +228,11 @@ def execute_cmd(cmd: str):
                         {"role": "system", "content": "Always answer briefly."},
                         {"role": "user", "content": text} 
                         ],
-                        temperature=0.5,
+                        temperature=0.7,
                         )
 
                     l = str(completion.choices[0].message)
-                    out_red(f'AI: {l}')
+                    out_red('AI \n' + l[32:-55])
                     tts.va_speak(l)
                     break
 
