@@ -99,7 +99,9 @@ The following features will be added in the future:
 ![pythonw_uY2EBXZ6G0](https://github.com/PandaBTBs/Assistant-2.0-program-/assets/118614536/00f5c8e3-63f9-4872-a9d0-e87836d74b06)
 
 ![explorer_bf4pg2g1IS](https://github.com/PandaBTBs/Assistant-2.0-program-/assets/118614536/7a168455-d514-436c-bcfe-b7dc6a7d6d33)
+
 ![pythonw_JQLggWvqKD](https://github.com/PandaBTBs/Assistant-2.0-program-/assets/118614536/0aede6c8-15e0-4aaa-b140-b5ecc351aab9)
+
 ![explorer_0dnWR03wL8](https://github.com/PandaBTBs/Assistant-2.0-program-/assets/118614536/06fbf9d1-259f-4eda-b57d-bb8d6679bb7e)
 
 ![pythonw_8EVM0ggMp0](https://github.com/PandaBTBs/Assistant-2.0-program-/assets/118614536/8daba5e0-47b7-4960-b027-7458c834718e)
