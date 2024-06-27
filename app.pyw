@@ -17,6 +17,10 @@ root.title('Ассистент Alisa')
 root.geometry('600x400')
 root['bg'] = 'black'
 
+# img_mic_on=ImageTk.PhotoImage(file='J:\\Stella\\stellaPR\\python_web_pr\\button_img.ico\\mic-on.png')
+# img_mic_off=ImageTk.PhotoImage(file='J:\\Stella\\stellaPR\\python_web_pr\\button_img.ico\\mic-off.png')
+
+
 #vosk model
 
 def rep_model_vosk_small():
@@ -69,7 +73,7 @@ def open_window_Modelvois_replacement():
     img=PhotoImage(file='alisa.png')
     window_Modelvois_replacement.iconphoto(False,img)
     window_Modelvois_replacement.resizable(width=False, height=False)
-    window_Modelvois_replacement.title('Modelvois')
+    window_Modelvois_replacement.title('vois')
     window_Modelvois_replacement.resizable(0, 0)
     Modelvois_replacement= Canvas(window_Modelvois_replacement, width=300, height=10, bg='#65da88', highlightthickness=0) #bg='#65da88'
         
@@ -124,7 +128,7 @@ def open_window_Modelvolume_replacemen():
     img=PhotoImage(file='alisa.png')
     window_Modelvolume_replacemen.iconphoto(False,img)
     window_Modelvolume_replacemen.resizable(width=False, height=False)
-    window_Modelvolume_replacemen.title('Modelvolume')
+    window_Modelvolume_replacemen.title('volume')
     window_Modelvolume_replacemen.resizable(0, 0)
     window_Modelvolume= Canvas(window_Modelvolume_replacemen, width=300, height=10, bg='#65da88', highlightthickness=0)
     
@@ -145,7 +149,7 @@ def home_page():
     
     home_page = tk.Label(home_frame, text = ('_______________HOME_______________\n'), font = ('Arial', 16), fg = 'black')
     
-    com = tk.Label(home_frame, text = '{alt_name} \n ассистент, робот, стелла \n\n {short_programs} \n ответь, переведи, скажи, говори, сколько вермя',
+    com = tk.Label(home_frame, text = '{alt_name} \n ассистент, робот, алиса \n\n {short_programs} \n ответь, переведи, скажи, говори, сколько вермя',
                    font = ('Bold', 14))
     cop = tk.Label(home_frame, text = 'python run.py',
                    font = ('Bold', 14))
@@ -386,10 +390,10 @@ log_indicate.place(x=3, y=200, width=3, height=30)
 CHAT_btn =tk.Button(options_frame, text='CHAT', font=('Bold', 12), 
                     fg='white', bd=0, bg='black',
                     command=lambda: indicate(CHAT_indicate, chat_page))
-CHAT_btn.place(x = 10, y = 200)
+CHAT_btn.place(x = 10, y = 250)
 
 CHAT_indicate = tk.Label(options_frame, text='', bg='black')
-CHAT_indicate.place(x=3, y=200, width=3, height=30)
+CHAT_indicate.place(x=3, y=250, width=3, height=30)
 
 
 options_frame.pack(side=tk.LEFT) 
