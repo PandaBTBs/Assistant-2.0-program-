@@ -17,9 +17,6 @@ root.title('Ассистент Alisa')
 root.geometry('600x400')
 root['bg'] = 'black'
 
-# img_mic_on=ImageTk.PhotoImage(file='J:\\Stella\\stellaPR\\python_web_pr\\button_img.ico\\mic-on.png')
-# img_mic_off=ImageTk.PhotoImage(file='J:\\Stella\\stellaPR\\python_web_pr\\button_img.ico\\mic-off.png')
-
 
 #vosk model
 
