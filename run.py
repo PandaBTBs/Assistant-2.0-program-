@@ -235,46 +235,6 @@ def execute_cmd(cmd: str):
                     out_red('AI \n' + l[32:-57])
                     tts.va_speak(l)
                     break
-
-        # tts.va_speak('Хорошо, можете задать любой вопрос, и я, постараюсь ответить на него.')
-
-        # fileW_save = open('chat_save.txt', 'a', encoding='utf-8') # print chat
-        # print('-AI_chat- \n input your your question: \n Для выхода: -выход- / -exit-' )
-
-        # from openai import OpenAI
-
-        # # Point to the local server
-        # client = OpenAI(base_url="http://localhost:1234/v1", api_key="lm-studio")
-        # True_chat = True
-        # while True_chat == True:
-
-        #     if True_chat == True:
-
-        #         login = str(input())
-
-
-        #         if login == 'выход' or login == 'exit':
-        #             break
-        #         else: 
-        #             fileW_save.write(f'Login: {login} \n')
-
-        #             completion = client.chat.completions.create(
-        #             model="TheBloke/dolphin-2.2.1-mistral-7B-GGUF",
-        #             messages=[
-        #             {"role": "system", "content": "Always answer briefly."},
-        #             {"role": "user", "content": login} 
-        #             ],
-        #             temperature=0.7,
-        #             )
-
-
-        #             l = str(completion.choices[0].message)
-        #             fileW_save.write(f'AI: {l} \n')
-
-        #             print(completion.choices[0].message)
-
-        #             tts.va_speak(l)
-
                  
     elif cmd == 'history':
         tts.va_speak('Хорошо, активирован, навык, истории, Какую историю, Вы, хотите выбрать?')
