@@ -232,7 +232,7 @@ def execute_cmd(cmd: str):
                         )
 
                     l = str(completion.choices[0].message)
-                    out_red('AI \n' + l[32:-55])
+                    out_red('AI \n' + l[32:-57])
                     tts.va_speak(l)
                     break
 
