@@ -1,6 +1,7 @@
 import os
 import stt
 import tts
+import log
 from fuzzywuzzy import fuzz
 import datetime
 from num2t4ru import num2text
@@ -12,60 +13,20 @@ def out_blue(text):
     print("\033[36m {}" .format(text))
 def out_red(text):
     print("\033[31m {}" .format(text))
+def out_white(text):
+    print("\033[39m {}" .format(text))
 
 
-name = ('ассистент')
+print(f"{log.name}", f"{log.alt_name}", tts.va_speak("Ассистент, начал свою работу"))
 
-alt_name = ('ассистент', 'робот', 'алиса')
-
-short_programs = ('ответь', 'переведи', 'скажи', 'говори', 'сколько вермя')
-
-cmd_list = {
-        "list": ('список команд', 'команды', 'что ты умеешь'),
-        
-        "time": ('время', 'текущее время', 'сейчас времени', 'который час'),
-        
-        "open_browser": ( 'гугл хром', 'браузер'),
-        
-        "history": ('тетрадь'),
-        
-        "open_browser_steam": ('стим', 'запусти стим'),
-        
-        "open_browser_server": ('сервер', 'запусти сервер'),
-    
-        "open_sharex": ('снимок экрана', 'запусти снимок'),
-        
-        "open_OBS": ('запись', 'запись экрана'),
-        
-        "open_vs": ('код', 'программирование'),
-        
-        "open_vtube": ('аватар', 'виртуальная студия'),
-        
-        "open_discord": ('общение', 'друзья'),
-        
-        "joke": ('расскажи анекдот', 'шутка', 'расскажи шутку', 'пошути'),
-        
-        "history": ('истории','навык'),
-        
-        "chat_llama": ('Ответ', 'Вопрос'),
-        
-        "work_zone": ('рабочая зона', 'зона'),
-        
-        "exit": ( 'заврешение работы', 'конец работы', 'закрыть')
-        
-    }
-
-print(f"{name}", f"{alt_name}", tts.va_speak("Ассистент, начал свою работу"))
-
-
-print('--Список команд:-- \n- list: список команд, команды, что ты умеешь\n- time: время, текущее время, сейчас времени, который чаc\n - history: навык,\n- open_browser: гугл хром, браузер\n- open_steam: стим, запусти стим \n- open_browser_server: сервер, запусти сервер \n- open_sharex: снимок, снимок экрана \n- open_OBS: запись, запись экрана \n- open_vs: код, программирование \n- open_vtube: аватар, виртуальная студия \n- open_discord: общение, друзья \n- joke: расскажи анекдот, рассмеши, шутка, расскажи шутку, пошути, развесели\n- exit: заврешение работы, конец работы, закрыть\n\n')
+print('--Список команд:-- \n- list: список команд, команды, что ты умеешь\n- time: время, текущее время, сейчас времени, который чаc\n- history: навык,\n- open_browser: гугл хром, браузер\n- open_steam: стим, запусти стим \n- open_browser_server: сервер, запусти сервер \n- open_sharex: снимок, снимок экрана \n- open_OBS: запись, запись экрана \n- open_vs: код, программирование \n- open_vtube: аватар, виртуальная студия \n- open_discord: общение, друзья \n- joke: расскажи анекдот, рассмеши, шутка, расскажи шутку, пошути, развесели\n- exit: заврешение работы, конец работы, закрыть\n\n')
 
 
 def va_respond(voice: str):
     print(voice)
-    if voice.startswith(alt_name):
+    if voice.startswith(log.alt_name):
         cmd = recognize_cmd(filter_cmd(voice))
-        if cmd['cmd'] not in cmd_list.keys():
+        if cmd['cmd'] not in log.cmd_list.keys():
             tts.va_speak("чего тебе надо? , скажи моё имя, а потом команды!")
         else:
             execute_cmd(cmd['cmd'])
@@ -74,17 +35,17 @@ def va_respond(voice: str):
 def filter_cmd(raw_voice: str):
     cmd = raw_voice
     
-    for x in alt_name:
+    for x in log.alt_name:
         cmd = cmd.replace(x, "").strip()
 
-    for x in short_programs:
+    for x in log.short_programs:
         cmd = cmd.replace(x, "").strip()
     
     return cmd
 
 def recognize_cmd(cmd: str):
     rc = {'cmd': '', 'percent': 0}
-    for c, v in cmd_list.items():
+    for c, v in log.cmd_list.items():
 
         for x in v:
             vrt = fuzz.ratio(cmd, x)
@@ -97,7 +58,7 @@ def recognize_cmd(cmd: str):
 def execute_cmd(cmd: str):
     if cmd == 'list':
         # help
-        text = "Я умею следующие команды: ..."
+        text = "Я умею исполнять следующие команды: ..."
         text += "рассказывать анекдот+ы ..."
         text += "рассказывать стих+и ..."
         text += "открыв+ать браузер, сайты..." 
@@ -183,14 +144,16 @@ def execute_cmd(cmd: str):
         webbrowser.open("https://www.google.ru/?hl=ru")
         os.startfile(r'J:\Microsoft VS Code\Code.exe')
         os.startfile(r'D:/steamT1/steamapps/common/ShareX/ShareX_Launcher')
-    
-    
-    
+
     # BETA
     
     elif cmd == 'chat_llama':
+        
+        
         # print('-AI_chat- \n input your your question: \n Для выхода: -выход- / -exit-' )
         tts.va_speak('Хорошо, можете задать любой вопрос, и я, постараюсь ответить на него.')
+        out_red('ДЛЯ ЗАВЕРЕШНИЯ, СКАЖИТЕ: -ВЫХОД-')
+        out_white('text auto')
         import json, pyaudio
         from vosk import Model, KaldiRecognizer
 
@@ -212,29 +175,33 @@ def execute_cmd(cmd: str):
                         
         print('\n Задайте вопрос...')
         
+        
         for text in lisen():
+            
             out_blue(f'user: {text}')
 
-            # Point to the local server
+            #   Point to the local server
             from openai import OpenAI
             client = OpenAI(base_url="http://localhost:1234/v1", api_key="lm-studio")
-            True_chat = True
-            while True_chat == True:
+            
+            while __name__ == '__main__':
+                completion = client.chat.completions.create(
+                model="TheBloke/dolphin-2.2.1-mistral-7B-GGUF",
+                messages=[
+                {"role": "system", "content": "Always answer briefly."},
+                {"role": "user", "content": text} 
+                ],
+                temperature=0.4,
+                )
 
-                if True_chat == True:
-                    completion = client.chat.completions.create(
-                    model="TheBloke/dolphin-2.2.1-mistral-7B-GGUF",
-                    messages=[
-                        {"role": "system", "content": "Always answer briefly."},
-                        {"role": "user", "content": text} 
-                        ],
-                        temperature=0.7,
-                        )
+                l = str(completion.choices[0].message)
+                out_red('AI \n' + l[32:-57])
+                tts.va_speak(l)
+                break
+            
+                
 
-                    l = str(completion.choices[0].message)
-                    out_red('AI \n' + l[32:-57])
-                    tts.va_speak(l)
-                    break
+
                  
     elif cmd == 'history':
         tts.va_speak('Хорошо, активирован, навык, истории, Какую историю, Вы, хотите выбрать?')
