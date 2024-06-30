@@ -15,8 +15,6 @@ cmd_list = {
 
         "open_browser": ( 'гугл хром', 'браузер'),
 
-        "history": ('тетрадь'),
-
         "open_browser_steam": ('стим', 'запусти стим'),
 
         "open_browser_server": ('сервер', 'запусти сервер'),
